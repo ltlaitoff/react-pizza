@@ -9,3 +9,15 @@
   text-decoration: none;
   box-sizing: border-box !important;
 }
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  padding: 45px 0;
+  background-color: $yellow !important;
+  display: flex;
+  justify-content: center;
+}
