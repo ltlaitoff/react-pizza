@@ -1,0 +1,11 @@
+@import '../../assets/scss/general';
+
+.button {
+  background: $accent;
+  border-radius: 30px;
+
+  &-outline {
+    background: #FFFFFF;
+    border: 1px solid $accent;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Main.scss'
+import styles from './main.scss'
 
 const Main = props => {
   return (
