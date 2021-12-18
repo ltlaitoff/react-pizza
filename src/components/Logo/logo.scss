@@ -1,0 +1,33 @@
+@import "../../assets/scss/general";
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  &-text {
+    margin-left: 17px;
+  }
+
+  &-title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: $logo-title;
+  }
+
+  &-descr {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: $logo-descr;
+  }
+}
