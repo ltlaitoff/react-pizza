@@ -1,0 +1,83 @@
+{
+	"categories": ["Meat", "Vegetarian", "Grill", "Sharp", "Closed"],
+
+	"items2": [
+		{
+      "id": 1,
+			"name": "Пепперони фреш",
+			"image": "pepperoni-fresh.jpeg",
+			"price": "249",
+			"categories": ["Meat"]
+		},
+		{
+			"id": 2,
+			"name": "Ветчина и сыр",
+			"image": "ham-and-cheese.jpg",
+			"price": "299",
+			"categories": ["Meat", "Closed"]
+		},
+		{
+			"id": 3,
+			"name": "Двойной цыпленок",
+			"image": "double-chick.jpeg",
+			"price": "299",
+			"categories": ["Meat", "Sharp"]
+		},
+		{
+			"id": 4,
+			"name": "Пепперони",
+			"image": "pepperoni.jpeg",
+			"price": "399",
+			"categories": ["Meat", "Grill"]
+		},
+		{
+			"id": 5,
+			"name": "Маргарита",
+			"image": "margarita.jpeg",
+			"price": "349",
+			"categories": ["Vegetarian"]
+		},
+		{
+			"id": 6,
+			"name": "Ветчина и грибы",
+			"image": "ham-and-mushrooms.jpeg",
+			"price": "349",
+			"categories": ["Meat", "Grill"]
+		},
+		{
+			"id": 7,
+			"name": "Гавайская",
+			"image": "hawaiian.jpeg",
+			"price": "399",
+			"categories": ["Meat"]
+		},
+		{
+			"id": 8,
+			"name": "Диабло",
+			"image": "diablo.jpeg",
+			"price": "449",
+			"categories": ["Meat", "Sharp"]
+		},
+		{
+			"id": 9,
+			"name": "Додо",
+			"image": "dodo.jpeg",
+			"price": "449",
+			"categories": ["Meat", "Closed"]
+		},
+		{
+			"id": 10,
+			"name": "Овощи и грибы",
+			"image": "vegetables-and-mushrooms.jpeg",
+			"price": "399",
+			"categories": ["Vegetarian"]
+		},
+		{
+			"id": 11,
+			"name": "Четыре сыра",
+			"image": "four-cheeses.jpeg",
+			"price": "449",
+			"categories": ["Vegetarian", "Closed"]
+		}
+	]
+}
