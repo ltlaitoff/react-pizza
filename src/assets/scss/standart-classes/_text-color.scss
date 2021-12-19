@@ -1,0 +1,13 @@
+.text {
+  &-orange {
+    color: $accent;
+  }
+  
+  &-white {
+    color: $white;
+  }
+
+  &-dark-gray {
+    color: $dark-gray;
+  }
+}
