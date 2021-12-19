@@ -1,0 +1,11 @@
+@mixin rounded-sm {
+  border-radius: $radius-sm
+}
+
+@mixin rounded-md {
+  border-radius: $radius-md
+}
+
+@mixin rounded-lg {
+  border-radius: $radius-lg
+}
