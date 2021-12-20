@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="header" style={styles}>
       <Logo />
-      <ShoppingCartOpenButton price="520" count="3"></ShoppingCartOpenButton>
+      <ShoppingCartOpenButton count={3}></ShoppingCartOpenButton>
     </header>
   )
 }
