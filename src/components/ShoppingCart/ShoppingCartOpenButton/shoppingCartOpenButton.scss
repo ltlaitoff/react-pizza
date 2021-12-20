@@ -1,0 +1,26 @@
+@import "../../../assets/scss/general";
+
+.shopping-cart-open-button {
+  padding: 12px 23px;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 13px;
+
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: $white;
+
+  &-divider {
+    background-color: rgba($white, 0.25);
+    height: 25px;
+    width: 1px;
+  }
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+  }
+}
