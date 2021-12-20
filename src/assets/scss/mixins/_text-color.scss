@@ -1,0 +1,11 @@
+@mixin text-orange {
+  color: $accent;
+}
+
+@mixin text-white {
+  color: $white;
+}
+
+@mixin text-dark-gray {
+  color: $dark-gray;
+}

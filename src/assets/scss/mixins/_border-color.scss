@@ -1,0 +1,11 @@
+@mixin border-orange{
+  border-color: $accent;
+}
+
+@mixin border-gray-70{
+  border-color: $gray-70;
+}
+
+@mixin border-gray-85{
+  border-color: $gray-85;
+}
