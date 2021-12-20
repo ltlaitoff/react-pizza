@@ -1,11 +1,89 @@
 @import '../../assets/scss/general';
 
 .button {
-  background: $accent;
-  border-radius: 30px;
+	@include bg-orange;
+	@include text-white;
+	@include border-transparent;
+	@include border-1;
+	@include rounded-lg;
 
-  &-outline {
-    background: #FFFFFF;
-    border: 1px solid $accent;
+	&-bg {
+		&-orange {
+			@include bg-orange;
+		}
+
+		&-white {
+			@include bg-white;
+		}
+
+		&-dark-gray {
+			@include bg-dark-gray;
+		}
+
+		&-light-gray-60 {
+			@include bg-light-gray-60;
+		}
+
+		&-transparent {
+			@include bg-transparent;
+		}
+	}
+
+  &-border {
+    &-orange {
+      @include border-orange;
+    }
+
+    &-gray-70 {
+      @include border-gray-70;
+    }
+
+    &-gray-85 {
+      @include border-gray-85;
+    }
+
+    &-transparent {
+      @include border-transparent
+    }
+
+    &-1 {
+      @include border-1;
+    }
+
+    &-2 {
+      @include border-2;
+    }
+  }
+
+  &-text {
+    &-orange {
+      @include text-orange;
+    }
+
+    &-white {
+      @include text-white;
+    }
+
+    &-dark-gray {
+      @include text-dark-gray;
+    }
+
+    &-transparent {
+      @include text-transparent;
+    }
+  }
+  
+  &-rounded {
+    &-sm {
+      @include rounded-sm;
+    }
+
+    &-md {
+      @include rounded-md;
+    }
+
+    &-lg {
+      @include rounded-lg;
+    }
   }
 }
