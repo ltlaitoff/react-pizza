@@ -9,3 +9,7 @@
 @mixin text-dark-gray {
   color: $dark-gray;
 }
+
+@mixin text-transparent {
+  color: $transparent;
+}

@@ -9,3 +9,7 @@
 @mixin border-gray-85{
   border-color: $gray-85;
 }
+
+@mixin border-transparent {
+  border-color: $transparent;
+}

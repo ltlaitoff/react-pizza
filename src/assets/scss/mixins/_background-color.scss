@@ -17,3 +17,7 @@
 @mixin bg-light-gray-60 {
   background-color: $light-gray-60;
 }
+
+@mixin bg-transparent {
+  background-color: $transparent;
+}
