@@ -1,10 +1,10 @@
 import React from 'react'
-import Logo from '../components/Logo'
+import Header from '../containers/Header'
 
 
 const Home = () => {
   return (
-    <Logo/>
+    <Header />
   )
 }
 
