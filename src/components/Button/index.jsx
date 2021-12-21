@@ -70,7 +70,7 @@ const Button = ({
 	const classes = classNames(
 		'button',
 		className,
-		{ activeClass: active },
+		{ [activeClass]: active },
 		backgroudColorClass(backgroundColor),
 		borderColorClass(borderColor),
 		textColorClass(textColor),
