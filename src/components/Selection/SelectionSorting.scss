@@ -1,0 +1,18 @@
+@import '../../assets/scss/general';
+
+.selection-sorting {
+  &-open-button {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    cursor: pointer;
+  }
+
+  &-type {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: $accent;
+    @include text-orange;
+    text-underline-offset: 2px;
+  }
+}
