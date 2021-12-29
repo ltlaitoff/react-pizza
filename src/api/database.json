@@ -1,83 +1,124 @@
 {
-	"categories": ["Meat", "Vegetarian", "Grill", "Sharp", "Closed"],
+	"dough": ["thin", "standart"],
 
-	"items2": [
+	"sizes": {
+		"sm": 26,
+		"md": 30,
+		"lg": 46
+	},
+
+	"categories": ["meat", "vegetarian", "grill", "sharp", "closed"],
+
+	"pizzas": [
 		{
-      "id": 1,
+			"id": 1,
 			"name": "Пепперони фреш",
-			"image": "pepperoni-fresh.jpeg",
-			"price": "249",
-			"categories": ["Meat"]
+			"imageUrl": "https://i.ibb.co/mDbkCJ1/pepperoni-fresh.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 249,
+			"categories": ["meat"],
+			"popularity": 10
 		},
 		{
 			"id": 2,
 			"name": "Ветчина и сыр",
-			"image": "ham-and-cheese.jpg",
-			"price": "299",
-			"categories": ["Meat", "Closed"]
+			"imageUrl": "https://i.ibb.co/6mb95FH/ham-and-cheese.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 299,
+			"categories": ["meat", "closed"],
+			"popularity": 6
 		},
 		{
 			"id": 3,
 			"name": "Двойной цыпленок",
-			"image": "double-chick.jpeg",
-			"price": "299",
-			"categories": ["Meat", "Sharp"]
+			"imageUrl": "https://i.ibb.co/6tfKNy9/double-chick.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 299,
+			"categories": ["meat", "sharp"],
+			"popularity": 9
 		},
 		{
 			"id": 4,
 			"name": "Пепперони",
-			"image": "pepperoni.jpeg",
-			"price": "399",
-			"categories": ["Meat", "Grill"]
+			"imageUrl": "https://i.ibb.co/z7qBcnD/pepperoni.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 399,
+			"categories": ["meat", "grill"],
+			"popularity": 10
 		},
 		{
 			"id": 5,
 			"name": "Маргарита",
-			"image": "margarita.jpeg",
-			"price": "349",
-			"categories": ["Vegetarian"]
+			"imageUrl": "https://i.ibb.co/G2ZG2wr/margarita.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 349,
+			"categories": ["vegetarian"],
+			"popularity": 9
 		},
 		{
 			"id": 6,
 			"name": "Ветчина и грибы",
-			"image": "ham-and-mushrooms.jpeg",
-			"price": "349",
-			"categories": ["Meat", "Grill"]
+			"imageUrl": "https://i.ibb.co/fHrXGJ5/ham-and-mushrooms.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 349,
+			"categories": ["meat", "grill"],
+			"popularity": 8
 		},
 		{
 			"id": 7,
 			"name": "Гавайская",
-			"image": "hawaiian.jpeg",
-			"price": "399",
-			"categories": ["Meat"]
+			"imageUrl": "https://i.ibb.co/9nGMzBd/hawaiian.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 399,
+			"categories": ["meat"],
+			"popularity": 7
 		},
 		{
 			"id": 8,
 			"name": "Диабло",
-			"image": "diablo.jpeg",
-			"price": "449",
-			"categories": ["Meat", "Sharp"]
+			"imageUrl": "https://i.ibb.co/ZBRWc11/diablo.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 449,
+			"categories": ["meat", "sharp"],
+			"popularity": 9
 		},
 		{
 			"id": 9,
 			"name": "Додо",
-			"image": "dodo.jpeg",
-			"price": "449",
-			"categories": ["Meat", "Closed"]
+			"imageUrl": "https://i.ibb.co/192rxGt/dodo.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 449,
+			"categories": ["meat", "closed"],
+			"popularity": 8
 		},
 		{
 			"id": 10,
 			"name": "Овощи и грибы",
-			"image": "vegetables-and-mushrooms.jpeg",
-			"price": "399",
-			"categories": ["Vegetarian"]
+			"imageUrl": "https://i.ibb.co/Jt3vBxV/vegetables-and-mushrooms.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 399,
+			"categories": ["vegetarian"],
+			"popularity": 8
 		},
 		{
 			"id": 11,
 			"name": "Четыре сыра",
-			"image": "four-cheeses.jpeg",
-			"price": "449",
-			"categories": ["Vegetarian", "Closed"]
+			"imageUrl": "https://i.ibb.co/TLQJxd8/four-cheeses.jpg",
+			"dough": ["thin", "traditional"],
+			"sizes": ["sm", "md", "lg"],
+			"price": 449,
+			"categories": ["vegetarian", "closed"],
+			"popularity": 10
 		}
 	]
 }
