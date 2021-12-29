@@ -1,10 +1,10 @@
-import react from 'react';
+import React from 'react'
 
-import Home from './pages/Home';
-import Main from './components/Main';
+import Home from './pages/Home'
+import Main from './components/Main'
 
 const App = () => {
-  return (
+	return (
 		<>
 			<Main>
 				<Home />
@@ -13,4 +13,4 @@ const App = () => {
 	)
 }
 
-export default App;
+export default App
