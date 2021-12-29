@@ -74,6 +74,10 @@
   }
   
   &-rounded {
+    &-none {
+      border-radius: none;
+    }
+    
     &-sm {
       @include rounded-sm;
     }
