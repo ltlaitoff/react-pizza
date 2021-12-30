@@ -1,21 +1,24 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Button from '../../Button/index.jsx'
 
 import styles from './SelectionSortingList.scss'
 
-const sortingTypes = ['популярности', 'по цене', 'по алфавиту']
-
-const SelectionSortingList = () => {
-  return (
+const SelectionSortingList = ({ source, onClick, current }) => {
+	return (
 		<div className='sorting-list' style={styles}>
-			{sortingTypes.map((item, index) => {
+			{source.map((item, index) => {
 				return (
 					<Button
 						key={index}
-						className='sorting-list-item'
+						className={
+							'sorting-list-item ' +
+							(index === current && 'sorting-list-item-active')
+						}
 						backgroundColor='transparent'
 						textColor='dark-gray'
+						onClick={() => onClick(index)}
 					>
 						{item}
 					</Button>
@@ -23,6 +26,12 @@ const SelectionSortingList = () => {
 			})}
 		</div>
 	)
+}
+
+SelectionSortingList.propTypes = {
+	source: PropTypes.array,
+	onClick: PropTypes.func,
+	current: PropTypes.number
 }
 
 export default SelectionSortingList

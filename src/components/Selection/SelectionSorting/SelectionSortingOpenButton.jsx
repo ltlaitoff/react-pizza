@@ -1,29 +1,27 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Button from '../../Button/index.jsx'
 
-import arrowUp from '../../../assets/images/favicon/arrow-up.svg'
 import styles from './SelectionSortingOpenButton.scss'
 
-const SelectionSortingOpenButton = () => {
-	const inner = (
-		<>
-			<img src={arrowUp} alt='arrowUP' className='selection-sorting-icon' />
-			Сортировка по:
-			<div className='selection-sorting-type'>популярности</div>
-		</>
-	)
-
+const SelectionSortingOpenButton = ({ onClick, children }) => {
 	return (
 		<Button
-			className='selection-sorting-open-button'
+			className='sorting-open-button'
 			backgroundColor='transparent'
 			textColor='dark-gray'
 			style={styles}
+			onClick={onClick}
 		>
-			{inner}
+			{children}
 		</Button>
 	)
+}
+
+SelectionSortingOpenButton.propTypes = {
+	onClick: PropTypes.func,
+	children: PropTypes.node
 }
 
 export default SelectionSortingOpenButton
