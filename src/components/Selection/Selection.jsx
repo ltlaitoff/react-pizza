@@ -2,8 +2,8 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-import SelectionFilter from './SelectionFilter.jsx'
-import SelectionSorting from './SelectionSorting.jsx'
+import SelectionFilter from './SelectionFilter/SelectionFilter.jsx'
+import SelectionSorting from './SelectionSorting/SelectionSorting.jsx'
 
 import styles from './Selection.scss'
 
