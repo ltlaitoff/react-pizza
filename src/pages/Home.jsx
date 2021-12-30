@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../containers/Header'
-import Selection from '../components/Selection/Selection.jsx'
+import ContentWrapper from '../components/ContentWrapper/ContentWrapper.jsx'
 
 const Home = () => {
-  return (
+	return (
 		<>
 			<Header />
-			<Selection />
+			<ContentWrapper />
 		</>
 	)
 }
