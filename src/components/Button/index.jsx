@@ -39,7 +39,7 @@ const borderWidthClass = width => {
 }
 
 const roundedClass = size => {
-	const avalibleSizes = ['sm', 'md', 'lg']
+	const avalibleSizes = ['none', 'sm', 'md', 'lg']
 	if (avalibleSizes.includes(size)) return `button-rounded-${size}`
 	return `button-rounded-${size[0]}`
 }

@@ -1,16 +1,24 @@
 import React from 'react'
-import SelectionFilter from './SelectionFilter.jsx'
-import SelectionSorting from './SelectionSorting.jsx'
+
+import PropTypes from 'prop-types'
+
+import SelectionFilter from './SelectionFilter/SelectionFilter.jsx'
+import SelectionSorting from './SelectionSorting/SelectionSorting.jsx'
 
 import styles from './Selection.scss'
 
-const Selection = () => {
-  return (
+const Selection = ({ onFilterChange, onSortingChange }) => {
+	return (
 		<div className='selection' style={styles}>
-			<SelectionFilter></SelectionFilter>
-			<SelectionSorting></SelectionSorting>
+			<SelectionFilter onChange={onFilterChange}></SelectionFilter>
+			<SelectionSorting onChange={onSortingChange}></SelectionSorting>
 		</div>
 	)
+}
+
+Selection.propTypes = {
+	onFilterChange: PropTypes.func,
+	onSortingChange: PropTypes.func
 }
 
 export default Selection
