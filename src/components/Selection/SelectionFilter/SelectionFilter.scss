@@ -1,21 +1,22 @@
 @import '../../../assets/scss/general';
 
 .selection-filter {
-  display: flex;
-  column-gap: 7px;
+	display: flex;
+	column-gap: 7px;
 
-  &-button {
-    padding: 16px 27px;
-    text-align: center;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    letter-spacing: 0.015em;
-    &-active {
-      @include bg-dark-gray;
-      @include text-white;
-    }
-  }
+	&-button {
+		padding: 16px 27px;
+		text-align: center;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		letter-spacing: 0.015em;
+		text-transform: capitalize;
+		&-active {
+			@include bg-dark-gray;
+			@include text-white;
+		}
+	}
 }
