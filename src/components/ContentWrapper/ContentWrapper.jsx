@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import Selection from '../Selection/Selection.jsx'
+import Products from '../Products/Products.jsx'
 
 import styles from './ContentWrapper.scss'
 
@@ -22,7 +23,7 @@ const ContentWrapper = () => {
 				onFilterChange={onFilterChange}
 				onSortingChange={onSortingChange}
 			/>
-			{/* <Products filter={filter} sorting={sorting} /> */}
+			<Products filter={filter} sorting={sorting} />
 		</div>
 	)
 }
