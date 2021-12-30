@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '../../Button/index.jsx'
+
+import { getCategories } from '../../../api/api.js'
 
 import styles from './SelectionFilter.scss'
 
-const categories = ['Meat', 'Vegetarian', 'Grill', 'Sharp', 'Closed']
-
 const SelectionFilter = () => {
-  return (
+	const [categories, setCategories] = useState([])
+
+	useEffect(() => {
+		getCategories().then(categoriesList => setCategories(categoriesList))
+	}, [])
+
+	return (
 		<div style={styles} className='selection-filter'>
 			{categories.map((category, index) => {
 				return (
