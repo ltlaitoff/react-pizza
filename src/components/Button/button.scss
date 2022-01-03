@@ -1,6 +1,8 @@
 @import '../../assets/scss/general';
 
 .button {
+	cursor: pointer;
+
 	@include bg-orange;
 	@include text-white;
 	@include border-transparent;
@@ -29,65 +31,65 @@
 		}
 	}
 
-  &-border {
-    &-orange {
-      @include border-orange;
-    }
+	&-border {
+		&-orange {
+			@include border-orange;
+		}
 
-    &-gray-70 {
-      @include border-gray-70;
-    }
+		&-gray-70 {
+			@include border-gray-70;
+		}
 
-    &-gray-85 {
-      @include border-gray-85;
-    }
+		&-gray-85 {
+			@include border-gray-85;
+		}
 
-    &-transparent {
-      @include border-transparent
-    }
+		&-transparent {
+			@include border-transparent;
+		}
 
-    &-1 {
-      @include border-1;
-    }
+		&-1 {
+			@include border-1;
+		}
 
-    &-2 {
-      @include border-2;
-    }
-  }
+		&-2 {
+			@include border-2;
+		}
+	}
 
-  &-text {
-    &-orange {
-      @include text-orange;
-    }
+	&-text {
+		&-orange {
+			@include text-orange;
+		}
 
-    &-white {
-      @include text-white;
-    }
+		&-white {
+			@include text-white;
+		}
 
-    &-dark-gray {
-      @include text-dark-gray;
-    }
+		&-dark-gray {
+			@include text-dark-gray;
+		}
 
-    &-transparent {
-      @include text-transparent;
-    }
-  }
-  
-  &-rounded {
-    &-none {
-      border-radius: none;
-    }
-    
-    &-sm {
-      @include rounded-sm;
-    }
+		&-transparent {
+			@include text-transparent;
+		}
+	}
 
-    &-md {
-      @include rounded-md;
-    }
+	&-rounded {
+		&-none {
+			border-radius: none;
+		}
 
-    &-lg {
-      @include rounded-lg;
-    }
-  }
+		&-sm {
+			@include rounded-sm;
+		}
+
+		&-md {
+			@include rounded-md;
+		}
+
+		&-lg {
+			@include rounded-lg;
+		}
+	}
 }
