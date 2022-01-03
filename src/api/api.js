@@ -22,4 +22,17 @@ const getSizes = () => {
 	})
 }
 
-export { getCategories, getPizzas, getSizes }
+const getDoughs = () => {
+	const translateDoughs = {
+		thin: 'тонкое',
+		standart: 'традиционное'
+	}
+
+	return fetch(domen + '/dough').then(response => {
+		return response
+			.json()
+			.then(value => value.map(item => translateDoughs[item]))
+	})
+}
+
+export { getCategories, getPizzas, getSizes, getDoughs }
