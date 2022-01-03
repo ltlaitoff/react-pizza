@@ -1,0 +1,38 @@
+@import '../../assets/scss/general.scss';
+
+.products-items {
+	margin-top: 35px;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 35px;
+	row-gap: 65px;
+}
+
+.product {
+	max-width: 280px;
+
+	&-image {
+		padding: 0 5px 0 15px;
+		max-width: 260px;
+	}
+
+	&-title {
+		margin-top: 10px;
+		font-style: normal;
+		font-weight: 800;
+		font-size: 20px;
+		line-height: 24px;
+		text-align: center;
+		letter-spacing: 0.01em;
+		@include text-black;
+	}
+
+	&-settings-wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: 5px;
+		padding: 7px 5px;
+		background: $light-gray;
+		border-radius: 10px;
+	}
+}

@@ -23,15 +23,8 @@ const getSizes = () => {
 }
 
 const getDoughs = () => {
-	const translateDoughs = {
-		thin: 'тонкое',
-		standart: 'традиционное'
-	}
-
 	return fetch(domen + '/dough').then(response => {
-		return response
-			.json()
-			.then(value => value.map(item => translateDoughs[item]))
+		return response.json()
 	})
 }
 
