@@ -12,7 +12,10 @@ const SelectionFilter = ({ onChange }) => {
 	const [currentActiveId, setCurrentActiveId] = useState(0)
 
 	useEffect(() => {
-		getCategories().then(categoriesList => setCategories(categoriesList))
+		getCategories().then(categoriesList => {
+			setCategories(categoriesList)
+			onChange(currentActiveId, categoriesList[currentActiveId])
+		})
 	}, [])
 
 	const onClick = (event, index) => {

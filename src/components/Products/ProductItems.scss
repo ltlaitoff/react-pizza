@@ -1,0 +1,9 @@
+@import '../../assets/scss/general.scss';
+
+.products-items {
+	margin-top: 35px;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 35px;
+	row-gap: 65px;
+}

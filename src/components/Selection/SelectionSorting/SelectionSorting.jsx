@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import SelectionSortingOpenButton from './SelectionSortingOpenButton.jsx'
@@ -12,6 +12,10 @@ const SORT_TYPES = ['популярности', 'цене', 'алфавиту']
 const SelectionSorting = ({ onChange }) => {
 	const [listOpen, setListOpen] = useState(false)
 	const [currentSortId, setCurrentSortId] = useState(0)
+
+	useEffect(() => {
+		onChange(0, SORT_TYPES[currentSortId])
+	}, [])
 
 	const toggleListVisibility = () => setListOpen(!listOpen)
 

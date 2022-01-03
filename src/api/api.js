@@ -8,11 +8,10 @@ const getCategories = () => {
 
 const getPizzas = (filterName = '', filterValue = '', sorting = '') => {
 	const url = new URL(domen + '/pizzas')
-	let params = new URLSearchParams(url.search)
-	params.append(filterName, filterValue)
-	params.append('_sort', sorting)
+	url.searchParams.append(filterName + '_like', filterValue)
+	url.searchParams.append('_sort', sorting)
 
-	return fetch(url).then(response => {
+	return fetch(url.toString()).then(response => {
 		return response.json()
 	})
 }
@@ -23,4 +22,10 @@ const getSizes = () => {
 	})
 }
 
-export { getCategories, getPizzas, getSizes }
+const getDoughs = () => {
+	return fetch(domen + '/dough').then(response => {
+		return response.json()
+	})
+}
+
+export { getCategories, getPizzas, getSizes, getDoughs }

@@ -1,5 +1,5 @@
 {
-	"dough": ["thin", "standart"],
+	"dough": ["thin", "traditional"],
 
 	"sizes": {
 		"sm": 26,
@@ -14,8 +14,8 @@
 			"id": 1,
 			"name": "Пепперони фреш",
 			"imageUrl": "https://i.ibb.co/mDbkCJ1/pepperoni-fresh.jpg",
-			"dough": ["thin", "traditional"],
-			"sizes": ["sm", "md", "lg"],
+			"dough": ["traditional"],
+			"sizes": ["sm", "lg"],
 			"price": 249,
 			"categories": ["meat"],
 			"popularity": 10
@@ -24,8 +24,8 @@
 			"id": 2,
 			"name": "Ветчина и сыр",
 			"imageUrl": "https://i.ibb.co/6mb95FH/ham-and-cheese.jpg",
-			"dough": ["thin", "traditional"],
-			"sizes": ["sm", "md", "lg"],
+			"dough": ["thin"],
+			"sizes": ["md", "lg"],
 			"price": 299,
 			"categories": ["meat", "closed"],
 			"popularity": 6
@@ -35,7 +35,7 @@
 			"name": "Двойной цыпленок",
 			"imageUrl": "https://i.ibb.co/6tfKNy9/double-chick.jpg",
 			"dough": ["thin", "traditional"],
-			"sizes": ["sm", "md", "lg"],
+			"sizes": ["sm", "md"],
 			"price": 299,
 			"categories": ["meat", "sharp"],
 			"popularity": 9
@@ -54,8 +54,8 @@
 			"id": 5,
 			"name": "Маргарита",
 			"imageUrl": "https://i.ibb.co/G2ZG2wr/margarita.jpg",
-			"dough": ["thin", "traditional"],
-			"sizes": ["sm", "md", "lg"],
+			"dough": ["traditional"],
+			"sizes": ["md", "lg"],
 			"price": 349,
 			"categories": ["vegetarian"],
 			"popularity": 9

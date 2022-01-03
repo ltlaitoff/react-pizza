@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 import styles from './button.scss'
 
 /*
-* FIX:
-* [ ] move variables with colors to the global and make one function that will return classes
-*/
+ * FIX:
+ * [ ] move variables with colors to the global and make one function that will return classes
+ */
 const backgroudColorClass = color => {
 	const avalibleColors = [
 		'orange',
@@ -48,6 +48,7 @@ const Button = ({
 	onClick,
 	children,
 	disabled,
+	disabledClass,
 	className,
 	active,
 	activeClass,
@@ -56,6 +57,7 @@ const Button = ({
 	textColor,
 	borderWidth,
 	borderRadius,
+	style,
 	...attrs
 }) => {
 	const onClickHandler = e => {
@@ -71,6 +73,7 @@ const Button = ({
 		'button',
 		className,
 		{ [activeClass]: active },
+		{ [disabledClass]: disabled },
 		backgroudColorClass(backgroundColor),
 		borderColorClass(borderColor),
 		textColorClass(textColor),
@@ -81,7 +84,7 @@ const Button = ({
 	return (
 		<button
 			{...attrs}
-			style={styles}
+			style={(styles, style)}
 			className={classes}
 			disabled={disabled}
 			onClick={onClickHandler}
@@ -96,6 +99,7 @@ Button.propTypes = {
 	className: PropTypes.string,
 	onClick: PropTypes.func,
 	disabled: PropTypes.bool,
+	disabledClass: PropTypes.string,
 	active: PropTypes.bool,
 	activeClass: PropTypes.string,
 	backgroundColor: PropTypes.string,
@@ -110,6 +114,7 @@ Button.defaultProps = {
 	className: '',
 	onClick: () => {},
 	disabled: false,
+	disabledClass: '',
 	active: false,
 	activeClass: '',
 	backgroundColor: 'orange',

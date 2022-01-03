@@ -1,15 +1,19 @@
+@mixin text-black {
+	color: $black;
+}
+
 @mixin text-orange {
-  color: $accent;
+	color: $accent;
 }
 
 @mixin text-white {
-  color: $white;
+	color: $white;
 }
 
 @mixin text-dark-gray {
-  color: $dark-gray;
+	color: $dark-gray;
 }
 
 @mixin text-transparent {
-  color: $transparent;
+	color: $transparent;
 }
