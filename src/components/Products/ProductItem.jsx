@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import ProductDoughs from './ProductDoughs.jsx'
 import ProductSizes from './ProductSizes.jsx'
+import Button from '../Button'
 
 import styles from './ProductItem.scss'
 
@@ -39,7 +40,10 @@ const ProductItem = ({ product, doughs, sizes }) => {
 					onChange={onSizeChange}
 				/>
 			</div>
-			<div className='product-bottom-wrapper'></div>
+			<div className='product-bottom-wrapper'>
+				<div className='product-price'>{product.price}</div>
+				<Button className='product-add'>Добавить</Button>
+			</div>
 		</div>
 	)
 }
