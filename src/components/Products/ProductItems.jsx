@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import ProductDoughs from './ProductDoughs.jsx'
-import ProductSizes from './ProductSizes.jsx'
-
 import { getPizzas, getSizes, getDoughs } from '../../api/api.js'
 
 import styles from './ProductItems.scss'
+import ProductItem from './ProductItem.jsx'
 
 const ProductsItems = ({ filter, sorting }) => {
 	const [products, setProducts] = useState([])
@@ -23,36 +21,15 @@ const ProductsItems = ({ filter, sorting }) => {
 			setProducts(value)
 		)
 
-		getSizes().then(value => setSizes(value))
+		getSizes().then(value => setSizes(Object.entries(value)))
 
-		getDoughs().then(value => setDoughs(value))
+		getDoughs().then(value => setDoughs(Object.entries(value)))
 	}, [filter, sorting])
-
-	console.log(filter, sorting, products)
-	console.log(doughs)
 
 	return (
 		<div className='products-items' style={styles}>
 			{products.map(product => {
-				return (
-					<div className='product' key={product.id}>
-						<img
-							src={product.imageUrl}
-							alt={product.name}
-							className='product-image'
-						/>
-						<div className='product-title'>{product.name}</div>
-						<div className='product-settings-wrapper'>
-							<ProductDoughs
-								doughsList={doughs}
-								currentDoughs={product.dough}
-								// onChange={onDoughChange}
-							/>
-							<ProductSizes sizesList={sizes} currentSizes={product.sizes} />
-						</div>
-						<div className='product-bottom-wrapper'></div>
-					</div>
-				)
+				return <ProductItem product={product} doughs={doughs} sizes={sizes} />
 			})}
 		</div>
 	)
