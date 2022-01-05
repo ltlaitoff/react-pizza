@@ -6,7 +6,7 @@ import Products from '../Products/Products.jsx'
 import styles from './ContentWrapper.scss'
 
 const ContentWrapper = () => {
-	const [filter, setFilter] = useState({})
+	const [filter, setFilter] = useState({ id: -1, name: '' })
 	const [sorting, setSorting] = useState({})
 
 	const onFilterChange = (filterId, filterName) => {

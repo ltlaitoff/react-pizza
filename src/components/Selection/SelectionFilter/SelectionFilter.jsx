@@ -8,13 +8,13 @@ import { getCategories } from '../../../api/api.js'
 import styles from './SelectionFilter.scss'
 
 const SelectionFilter = ({ onChange }) => {
-	const [categories, setCategories] = useState([])
+	const [categories, setCategories] = useState({})
 	const [currentActiveId, setCurrentActiveId] = useState(0)
 
 	useEffect(() => {
-		getCategories().then(categoriesList => {
-			setCategories(categoriesList)
-			onChange(currentActiveId, categoriesList[currentActiveId])
+		getCategories().then(categoriesDict => {
+			setCategories(categoriesDict)
+			// onChange(currentActiveId, categoriesDict[currentActiveId])
 		})
 	}, [])
 
@@ -29,10 +29,10 @@ const SelectionFilter = ({ onChange }) => {
 
 	return (
 		<div style={styles} className='selection-filter'>
-			{categories.map((category, index) => {
+			{Object.entries(categories).map(([categoryId, categoryName], index) => {
 				return (
 					<Button
-						key={index}
+						key={categoryId}
 						className='selection-filter-button'
 						active={index === currentActiveId}
 						activeClass='selection-filter-button-active'
@@ -40,7 +40,7 @@ const SelectionFilter = ({ onChange }) => {
 						textColor='dark-gray'
 						onClick={event => onClick(event, index)}
 					>
-						{category}
+						{categoryName}
 					</Button>
 				)
 			})}
