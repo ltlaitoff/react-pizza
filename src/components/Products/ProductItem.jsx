@@ -6,14 +6,15 @@ import Button from '../Button'
 
 import styles from './ProductItem.scss'
 
-const ProductItem = ({ product, doughs, sizes }) => {
-	const [activeSize, setActiveSize] = useState(-1)
-	const [activeDough, setActiveDough] = useState(-1)
+const getKeyByValue = (obj, value) => {
+	if (Object.empty(obj) === true) return []
 
-	useEffect(() => {
-		setActiveDough(doughs.findIndex(pair => pair[1] === product.dough[0]))
-		setActiveSize(sizes.find(pair => pair[0] === product.sizes[0]))
-	}, [doughs, product, sizes])
+	return Object.keys(obj).find(key => obj[key] === value)
+}
+
+const ProductItem = ({ product, doughs, sizes }) => {
+	const [activeSize, setActiveSize] = useState(product.dough[0])
+	const [activeDough, setActiveDough] = useState(product.sizes[0])
 
 	const onSizeChange = newSize => setActiveSize(newSize)
 	const onDoughChange = newDough => setActiveDough(newDough)
@@ -33,12 +34,12 @@ const ProductItem = ({ product, doughs, sizes }) => {
 					activeDough={activeDough}
 					onChange={onDoughChange}
 				/>
-				<ProductSizes
+				{/* <ProductSizes
 					allSizes={sizes}
 					productSizes={product.sizes}
 					activeSize={activeSize}
 					onChange={onSizeChange}
-				/>
+				/> */}
 			</div>
 			<div className='product-bottom-wrapper'>
 				<div className='product-price'>{product.price}</div>
