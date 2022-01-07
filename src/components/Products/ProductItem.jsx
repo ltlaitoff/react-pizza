@@ -4,6 +4,8 @@ import ProductDoughs from './ProductDoughs.jsx'
 import ProductSizes from './ProductSizes.jsx'
 import Button from '../Button'
 
+import { useShoppingCartDispatch } from '../../context/shopping-cart.jsx'
+
 import { ReactComponent as PlusIcon } from '../../assets/images/favicon/plus.svg'
 
 import styles from './ProductItem.scss'
@@ -11,9 +13,21 @@ import styles from './ProductItem.scss'
 const ProductItem = ({ product, doughs, sizes }) => {
 	const [activeSize, setActiveSize] = useState(product.sizes[0])
 	const [activeDough, setActiveDough] = useState(product.dough[0])
+	const shoppingCartDispatch = useShoppingCartDispatch()
 
 	const onSizeChange = newSize => setActiveSize(newSize)
 	const onDoughChange = newDough => setActiveDough(newDough)
+
+	const addNewProduct = (id, dough, size, price) => {
+		shoppingCartDispatch({
+			type: 'add',
+			id,
+			dough,
+			size,
+			price,
+			count: 1
+		})
+	}
 
 	return (
 		<div className='product' key={product.id} style={styles}>
@@ -44,6 +58,9 @@ const ProductItem = ({ product, doughs, sizes }) => {
 					backgroundColor='transparent'
 					borderColor='orange'
 					borderWidth='1'
+					onClick={() =>
+						addNewProduct(product.id, activeDough, activeSize, product.price)
+					}
 				>
 					<PlusIcon className='product-add-icon' />
 					Добавить

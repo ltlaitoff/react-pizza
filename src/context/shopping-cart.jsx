@@ -32,8 +32,26 @@ const useShoppingCart = () => {
 }
 
 const shoppingCartReducer = (state, action) => {
+	console.log(state, action.count)
 	switch (action.type) {
 		case 'add': {
+			const stateCopy = [...state]
+
+			for (let itemId in stateCopy) {
+				if (
+					stateCopy[itemId].id === action.id &&
+					stateCopy[itemId].dough === action.dough &&
+					stateCopy[itemId].size === action.size
+				) {
+					stateCopy[itemId] = {
+						...stateCopy[itemId],
+						count: stateCopy[itemId].count + action.count
+					}
+
+					return stateCopy
+				}
+			}
+
 			return [
 				...state,
 				{
@@ -50,6 +68,9 @@ const shoppingCartReducer = (state, action) => {
 			return state.filter(item => item.id !== action.id)
 		}
 
+		// case 'remove-count': {
+		// }
+
 		default: {
 			throw new Error(`Unhandled action type: ${action.type}`)
 		}
@@ -57,7 +78,7 @@ const shoppingCartReducer = (state, action) => {
 }
 
 const ShoppingCartProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(shoppingCartReducer, {})
+	const [state, dispatch] = useReducer(shoppingCartReducer, [])
 	return (
 		<ShoppingCartStateContext.Provider value={state}>
 			<ShoppingCartDispatchContext.Provider value={dispatch}>
