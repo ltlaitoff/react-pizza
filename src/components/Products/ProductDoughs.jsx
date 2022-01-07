@@ -19,7 +19,7 @@ const ProductDoughs = ({ allDoughs, productDoughs, activeDough, onChange }) => {
 						key={key}
 						className='product-doughs-button'
 						disabledClass='product-doughs-button-disabled'
-						disabled={!productDoughs.includes(dough)}
+						disabled={!productDoughs.includes(key)}
 						active={key === activeDough}
 						activeClass='product-doughs-button-active'
 						style={{ width: buttonSize }}

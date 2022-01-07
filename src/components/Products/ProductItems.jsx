@@ -15,7 +15,7 @@ const ProductsItems = ({ filter, sorting, sizes, doughs }) => {
 			2: 'name'
 		}
 
-		getPizzas('categories', filter.name, sortingValue[sorting.id]).then(value =>
+		getPizzas('categories', filter.id, sortingValue[sorting.id]).then(value =>
 			setProducts(value)
 		)
 	}, [filter, sorting])
@@ -23,7 +23,14 @@ const ProductsItems = ({ filter, sorting, sizes, doughs }) => {
 	return (
 		<div className='products-items' style={styles}>
 			{products.map(product => {
-				return <ProductItem product={product} doughs={doughs} sizes={sizes} />
+				return (
+					<ProductItem
+						key={product.id}
+						product={product}
+						doughs={doughs}
+						sizes={sizes}
+					/>
+				)
 			})}
 		</div>
 	)
