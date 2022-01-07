@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Button from '../../Button'
 import { ReactComponent as ShoppingCartIcon } from '../../../assets/images/favicon/shopping-cart.svg'
 import PropTypes from 'prop-types'

@@ -65,11 +65,31 @@ const shoppingCartReducer = (state, action) => {
 		}
 
 		case 'remove': {
+			if (action.count !== undefined) {
+				const stateCopy = [...state]
+
+				for (let itemId in stateCopy) {
+					if (
+						stateCopy[itemId].id === action.id &&
+						stateCopy[itemId].dough === action.dough &&
+						stateCopy[itemId].size === action.size
+					) {
+						if (action.count >= stateCopy[itemId].count) {
+							break
+						}
+
+						stateCopy[itemId] = {
+							...stateCopy[itemId],
+							count: stateCopy[itemId].count - action.count
+						}
+
+						return stateCopy
+					}
+				}
+			}
+
 			return state.filter(item => item.id !== action.id)
 		}
-
-		// case 'remove-count': {
-		// }
 
 		default: {
 			throw new Error(`Unhandled action type: ${action.type}`)
