@@ -14,6 +14,7 @@ const getPizzas = (filterName = '', filterValue = '', sorting = '') => {
 	}
 
 	url.searchParams.append('_sort', sorting)
+	url.searchParams.append('_order', 'desc')
 
 	return fetch(url.toString()).then(response => {
 		return response.json()
