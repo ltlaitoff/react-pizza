@@ -4,6 +4,8 @@ import ProductDoughs from './ProductDoughs.jsx'
 import ProductSizes from './ProductSizes.jsx'
 import Button from '../Button'
 
+import { ReactComponent as PlusIcon } from '../../assets/images/favicon/plus.svg'
+
 import styles from './ProductItem.scss'
 
 const ProductItem = ({ product, doughs, sizes }) => {
@@ -36,8 +38,16 @@ const ProductItem = ({ product, doughs, sizes }) => {
 				/>
 			</div>
 			<div className='product-bottom-wrapper'>
-				<div className='product-price'>{product.price}</div>
-				<Button className='product-add'>Добавить</Button>
+				<div className='product-price'>от {product.price} ₽</div>
+				<Button
+					className='product-add'
+					backgroundColor='transparent'
+					borderColor='orange'
+					borderWidth='1'
+				>
+					<PlusIcon className='product-add-icon' />
+					Добавить
+				</Button>
 			</div>
 		</div>
 	)
