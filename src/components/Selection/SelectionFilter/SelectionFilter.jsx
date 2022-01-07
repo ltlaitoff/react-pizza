@@ -7,14 +7,19 @@ import { getCategories } from '../../../api/api.js'
 
 import styles from './SelectionFilter.scss'
 
+const sortById = (a, b) => {
+	return Number(a[0]) - Number(b[0])
+}
+
 const SelectionFilter = ({ onChange }) => {
 	const [categories, setCategories] = useState({})
-	const [currentActiveId, setCurrentActiveId] = useState(0)
+	const [currentActiveId, setCurrentActiveId] = useState('-1')
 
 	useEffect(() => {
 		getCategories().then(categoriesDict => {
+			categoriesDict['-1'] = 'All'
 			setCategories(categoriesDict)
-			// onChange(currentActiveId, categoriesDict[currentActiveId])
+			onChange('-1', categoriesDict['-1'])
 		})
 	}, [])
 
@@ -29,21 +34,23 @@ const SelectionFilter = ({ onChange }) => {
 
 	return (
 		<div style={styles} className='selection-filter'>
-			{Object.entries(categories).map(([categoryId, categoryName], index) => {
-				return (
-					<Button
-						key={categoryId}
-						className='selection-filter-button'
-						active={index === currentActiveId}
-						activeClass='selection-filter-button-active'
-						backgroundColor='light-gray-60'
-						textColor='dark-gray'
-						onClick={event => onClick(event, index)}
-					>
-						{categoryName}
-					</Button>
-				)
-			})}
+			{Object.entries(categories)
+				.sort(sortById)
+				.map(([categoryId, categoryName]) => {
+					return (
+						<Button
+							key={categoryId}
+							className='selection-filter-button'
+							active={categoryId === currentActiveId}
+							activeClass='selection-filter-button-active'
+							backgroundColor='light-gray-60'
+							textColor='dark-gray'
+							onClick={event => onClick(event, categoryId)}
+						>
+							{categoryName}
+						</Button>
+					)
+				})}
 		</div>
 	)
 }
