@@ -13,8 +13,8 @@ const getKeyByValue = (obj, value) => {
 }
 
 const ProductItem = ({ product, doughs, sizes }) => {
-	const [activeSize, setActiveSize] = useState(product.dough[0])
-	const [activeDough, setActiveDough] = useState(product.sizes[0])
+	const [activeSize, setActiveSize] = useState(product.sizes[0])
+	const [activeDough, setActiveDough] = useState(product.dough[0])
 
 	const onSizeChange = newSize => setActiveSize(newSize)
 	const onDoughChange = newDough => setActiveDough(newDough)
