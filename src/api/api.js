@@ -8,7 +8,11 @@ const getCategories = () => {
 
 const getPizzas = (filterName = '', filterValue = '', sorting = '') => {
 	const url = new URL(domen + '/pizzas')
-	url.searchParams.append(filterName + '_like', filterValue)
+
+	if (filterValue !== -1) {
+		url.searchParams.append(filterName + '_like', filterValue)
+	}
+
 	url.searchParams.append('_sort', sorting)
 
 	return fetch(url.toString()).then(response => {
