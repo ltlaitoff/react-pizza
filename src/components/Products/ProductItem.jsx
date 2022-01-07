@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import ProductDoughs from './ProductDoughs.jsx'
 import ProductSizes from './ProductSizes.jsx'
 import Button from '../Button'
 
 import styles from './ProductItem.scss'
-
-const getKeyByValue = (obj, value) => {
-	if (Object.empty(obj) === true) return []
-
-	return Object.keys(obj).find(key => obj[key] === value)
-}
 
 const ProductItem = ({ product, doughs, sizes }) => {
 	const [activeSize, setActiveSize] = useState(product.sizes[0])
@@ -34,12 +28,12 @@ const ProductItem = ({ product, doughs, sizes }) => {
 					activeDough={activeDough}
 					onChange={onDoughChange}
 				/>
-				{/* <ProductSizes
+				<ProductSizes
 					allSizes={sizes}
 					productSizes={product.sizes}
 					activeSize={activeSize}
 					onChange={onSizeChange}
-				/> */}
+				/>
 			</div>
 			<div className='product-bottom-wrapper'>
 				<div className='product-price'>{product.price}</div>
