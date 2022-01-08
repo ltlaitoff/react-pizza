@@ -1,0 +1,47 @@
+@import '../../../assets/scss/general.scss';
+
+.basket {
+	margin: 94px 0 140px 0;
+	min-width: 830px;
+	min-height: 625px;
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&-title {
+		display: flex;
+		column-gap: 17px;
+
+		&-icon {
+			width: 30px;
+			height: 30px;
+			stroke: #3f3f3f;
+		}
+
+		&-text {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 32px;
+			line-height: 39px;
+			letter-spacing: 0.01em;
+			color: $black;
+		}
+	}
+
+	&-clear {
+		display: flex;
+		align-items: center;
+		column-gap: 7px;
+		background-color: transparent;
+
+		&-text {
+			font-style: normal;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 19px;
+			color: $dark-gray-35;
+		}
+	}
+}

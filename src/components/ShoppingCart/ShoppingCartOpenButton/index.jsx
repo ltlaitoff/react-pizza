@@ -28,7 +28,7 @@ const ShoppingCartOpenButton = () => {
 			{shoppingPrice}
 			{divider}
 			<div className='shopping-cart-open-button-wrapper'>
-				<ShoppingCartIcon />
+				<ShoppingCartIcon className='shopping-cart-open-button-icon' />
 				{count}
 			</div>
 		</Button>

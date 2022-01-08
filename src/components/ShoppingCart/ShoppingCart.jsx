@@ -2,21 +2,20 @@ import React from 'react'
 
 import { useShoppingCartState } from '../../context/shopping-cart.jsx'
 import ShoppingCartEmpty from './ShoppingCartEmpty/ShoppingCartEmpty'
+import ShoppingCartContent from './ShoppingCartContent/ShoppingCartContent'
 
 import styles from './ShoppingCart.scss'
 
 const ShoppingCart = () => {
 	const shoppingCartState = useShoppingCartState()
 
-	let inner = <></>
-
-	if (shoppingCartState.length === 0) {
-		inner = <ShoppingCartEmpty />
-	}
-
 	return (
 		<div className='shopping-cart' style={styles}>
-			{inner}
+			{shoppingCartState.length === 0 ? (
+				<ShoppingCartEmpty />
+			) : (
+				<ShoppingCartContent />
+			)}
 		</div>
 	)
 }
