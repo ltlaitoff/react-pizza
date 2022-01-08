@@ -1,0 +1,111 @@
+@import '../../../../assets/scss/general.scss';
+
+.content {
+	&-item {
+		display: flex;
+		justify-content: space-between;
+
+		&-divider {
+			margin: 30px 0;
+			border: none;
+			background: #f4f4f4;
+			height: 1px;
+			width: 100%;
+		}
+
+		&-wrapper {
+			&-first {
+				min-width: 375px;
+				display: flex;
+				align-items: center;
+				column-gap: 15px;
+			}
+
+			&-two {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-left: 70px;
+			}
+		}
+
+		&-title {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 22px;
+			line-height: 27px;
+			letter-spacing: 0.01em;
+			color: $black;
+		}
+
+		&-descr {
+			margin-top: 3px;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 22px;
+			letter-spacing: 0.01em;
+			color: #8d8d8d;
+		}
+	}
+
+	&-img {
+		width: 80px;
+		height: 80px;
+	}
+
+	&-block-count {
+		display: flex;
+		align-items: center;
+		column-gap: 12px;
+	}
+
+	&-minus,
+	&-plus {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		border: 2px solid $accent;
+
+		background-color: transparent;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&-icon {
+			fill: $accent;
+		}
+	}
+
+	&-count {
+		font-style: normal;
+		font-weight: bold;
+		font-size: 22px;
+		line-height: 27px;
+		letter-spacing: 0.01em;
+		color: $black;
+	}
+
+	&-price {
+		font-style: normal;
+		font-weight: bold;
+		font-size: 22px;
+		line-height: 27px;
+		letter-spacing: 0.01em;
+		color: $black;
+	}
+
+	&-delete {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		border: 2px solid #d7d7d7;
+		background-color: transparent;
+
+		&-icon {
+			fill: #d7d7d7;
+		}
+	}
+}
