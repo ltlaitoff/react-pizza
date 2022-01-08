@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import styles from './button.scss'
 
@@ -45,6 +46,7 @@ const roundedClass = size => {
 }
 
 const Button = ({
+	href,
 	onClick,
 	children,
 	disabled,
@@ -81,6 +83,21 @@ const Button = ({
 		roundedClass(borderRadius)
 	)
 
+	if (href !== '') {
+		return (
+			<Link
+				to={href}
+				{...attrs}
+				style={(styles, style)}
+				className={classes}
+				disabled={disabled}
+				onClick={onClickHandler}
+			>
+				{children}
+			</Link>
+		)
+	}
+
 	return (
 		<button
 			{...attrs}
@@ -95,6 +112,7 @@ const Button = ({
 }
 
 Button.propTypes = {
+	href: PropTypes.string,
 	children: PropTypes.node,
 	className: PropTypes.string,
 	onClick: PropTypes.func,
@@ -110,6 +128,7 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
+	href: '',
 	children: 'Button text',
 	className: '',
 	onClick: () => {},

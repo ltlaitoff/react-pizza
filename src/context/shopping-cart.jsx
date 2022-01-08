@@ -65,30 +65,47 @@ const shoppingCartReducer = (state, action) => {
 		}
 
 		case 'remove': {
-			if (action.count !== undefined) {
-				const stateCopy = [...state]
-
-				for (let itemId in stateCopy) {
-					if (
-						stateCopy[itemId].id === action.id &&
-						stateCopy[itemId].dough === action.dough &&
-						stateCopy[itemId].size === action.size
-					) {
-						if (action.count >= stateCopy[itemId].count) {
-							break
-						}
-
-						stateCopy[itemId] = {
-							...stateCopy[itemId],
-							count: stateCopy[itemId].count - action.count
-						}
-
-						return stateCopy
+			return state.flatMap(item => {
+				if (
+					item.id === action.id &&
+					item.dough === action.dough &&
+					item.size === action.size
+				) {
+					if (action.count === undefined || action.count >= item.count) {
+						return []
 					}
-				}
-			}
 
-			return state.filter(item => item.id !== action.id)
+					return { ...item, count: item.count - action.count }
+				}
+
+				return item
+			})
+
+			// for (let itemId in stateCopy) {
+			// 	if (
+			// 		stateCopy[itemId].id === action.id &&
+			// 		stateCopy[itemId].dough === action.dough &&
+			// 		stateCopy[itemId].size === action.size
+			// 	) {
+			// 		if (action.count !== undefined) {
+			// 			delete stateCopy[itemId]
+			// 			return stateCopy
+			// 		}
+
+			// 		if (action.count >= stateCopy[itemId].count) {
+			// 			break
+			// 		}
+
+			// 		stateCopy[itemId] = {
+			// 			...stateCopy[itemId],
+			// 			count: stateCopy[itemId].count - action.count
+			// 		}
+
+			// 		return stateCopy
+			// 	}
+			// }
+
+			return [...state]
 		}
 
 		default: {

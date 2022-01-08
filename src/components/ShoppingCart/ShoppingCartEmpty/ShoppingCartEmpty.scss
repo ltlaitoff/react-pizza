@@ -1,0 +1,50 @@
+@import '../../../assets/scss/general.scss';
+
+.empty {
+	margin: 160px 0 140px 0;
+	max-width: 550px;
+	max-height: 530px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	&-title {
+		font-style: normal;
+		font-weight: bold;
+		font-size: 32px;
+		line-height: 39px;
+		letter-spacing: 0.01em;
+		color: $black;
+	}
+
+	&-descr {
+		margin-top: 10px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 145.4%;
+		text-align: center;
+		letter-spacing: 0.01em;
+		color: $descr;
+	}
+
+	&-icon {
+		margin-top: 50px;
+		width: 300px;
+	}
+
+	&-button {
+		margin-top: 75px;
+		padding: 15px 40px;
+		background-color: $button;
+
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		letter-spacing: 0.015em;
+		color: $white;
+	}
+}
