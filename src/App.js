@@ -1,6 +1,9 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
+import ShoppingCart from './pages/ShoppingCart'
+import NotFoundPage from './pages/NotFoundPage'
 import Main from './components/Main'
 
 import { ShoppingCartProvider } from './context/shopping-cart.jsx'
@@ -9,7 +12,11 @@ const App = () => {
 		<>
 			<Main>
 				<ShoppingCartProvider>
-					<Home />
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/shopping-cart' element={<ShoppingCart />} />
+						<Route path='/*' element={<NotFoundPage />} />
+					</Routes>
 				</ShoppingCartProvider>
 			</Main>
 		</>
