@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Selection from '../components/Selection/Selection.jsx'
 import Products from '../components/Products/Products.jsx'
 
-const Home = () => {
+const HomePage = () => {
 	const [filter, setFilter] = useState({})
 	const [sorting, setSorting] = useState({})
 
@@ -26,4 +26,4 @@ const Home = () => {
 	)
 }
 
-export default Home
+export default HomePage
