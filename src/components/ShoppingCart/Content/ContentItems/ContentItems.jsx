@@ -35,6 +35,28 @@ const ContentItems = () => {
 		getPizzasByIds(ids).then(value => setPizzas(transformPizzasInDict(value)))
 	}, [state])
 
+	const removeItem = (id, dough, size, count) => {
+		return () =>
+			dispatch({
+				type: 'remove',
+				id,
+				dough,
+				size,
+				count: count
+			})
+	}
+
+	const addItem = (id, dough, size, count) => {
+		return () =>
+			dispatch({
+				type: 'add',
+				id,
+				dough,
+				size,
+				count
+			})
+	}
+
 	return (
 		<div className='content-items' style={styles}>
 			{state.map(item => {
@@ -63,17 +85,26 @@ const ContentItems = () => {
 
 							<div className='content-item-wrapper-two'>
 								<div className='content-block-count'>
-									<Button className='content-minus'>
+									<Button
+										className='content-minus'
+										onClick={removeItem(item.id, item.dough, item.size, 1)}
+									>
 										<Minus className='content-minus-icon' />
 									</Button>
 									<div className='content-count'>{item.count}</div>
-									<Button className='content-plus'>
+									<Button
+										className='content-plus'
+										onClick={addItem(item.id, item.dough, item.size, 1)}
+									>
 										<Plus className='content-plus-icon' />
 									</Button>
 								</div>
 
 								<div className='content-price'>{apiItem.price} ₽</div>
-								<Button className='content-delete'>
+								<Button
+									className='content-delete'
+									onClick={removeItem(item.id, item.dough, item.size)}
+								>
 									<Cross className='content-delete-icon' />
 								</Button>
 							</div>
@@ -86,14 +117,17 @@ const ContentItems = () => {
 				<div className='content-all-count'>
 					Всего пицц:{' '}
 					<span className='content-all-count-bold'>
-						{Object.keys(state).length}
+						{Object.values(state).reduce(
+							(prev, current) => prev + current.count,
+							0
+						)}
 					</span>
 				</div>
 				<div className='content-all-price'>
 					Сумма заказа:{' '}
 					<span className='content-all-price-bold'>
 						{Object.values(state).reduce(
-							(prev, current) => prev + current.price,
+							(prev, current) => prev + current.price * current.count,
 							0
 						) + ' ₽'}
 					</span>
