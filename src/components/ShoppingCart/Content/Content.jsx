@@ -21,6 +21,7 @@ const ShoppingCartContent = () => {
 					<div className='content-clear-text'>Очистить корзину</div>
 				</Button>
 			</div>
+
 			<ContentItems />
 		</div>
 	)

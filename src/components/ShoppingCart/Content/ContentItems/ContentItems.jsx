@@ -31,8 +31,6 @@ const ContentItems = () => {
 	}
 
 	useEffect(() => {
-		console.log('two')
-
 		const ids = state.reduce((prev, current) => [...prev, current.id], [])
 		getPizzasByIds(ids).then(value => setPizzas(transformPizzasInDict(value)))
 	}, [state])
@@ -83,6 +81,24 @@ const ContentItems = () => {
 					</>
 				)
 			})}
+
+			<div className='content-items-footer'>
+				<div className='content-all-count'>
+					Всего пицц:{' '}
+					<span className='content-all-count-bold'>
+						{Object.keys(state).length}
+					</span>
+				</div>
+				<div className='content-all-price'>
+					Сумма заказа:{' '}
+					<span className='content-all-price-bold'>
+						{Object.values(state).reduce(
+							(prev, current) => prev + current.price,
+							0
+						) + ' ₽'}
+					</span>
+				</div>
+			</div>
 		</div>
 	)
 }
