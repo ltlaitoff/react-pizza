@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import ShoppingCart from './pages/ShoppingCart'
 import NotFoundPage from './pages/NotFoundPage'
 import Main from './components/Main'
+import Header from './containers/Header'
 
 import { ShoppingCartProvider } from './context/shopping-cart.jsx'
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
 		<>
 			<Main>
 				<ShoppingCartProvider>
+					<Header />
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/shopping-cart' element={<ShoppingCart />} />
