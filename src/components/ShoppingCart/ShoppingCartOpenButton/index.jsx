@@ -1,13 +1,12 @@
 import React from 'react'
 import Button from '../../Button'
 import { ReactComponent as ShoppingCartIcon } from '../../../assets/images/favicon/shopping-cart.svg'
-import PropTypes from 'prop-types'
 
 import { useShoppingCartState } from '../../../context/shopping-cart.jsx'
 
 import styles from './shoppingCartOpenButton.scss'
 
-const ShoppingCartOpenButton = ({ onClick, disabled, active }) => {
+const ShoppingCartOpenButton = () => {
 	const shoppingCartState = useShoppingCartState()
 
 	const [summaryPrice, count] = shoppingCartState.reduce(
@@ -24,30 +23,16 @@ const ShoppingCartOpenButton = ({ onClick, disabled, active }) => {
 		<Button
 			className='shopping-cart-open-button'
 			style={styles}
-			onClick={onClick}
-			disabled={disabled}
-			active={active}
+			href='/shopping-cart'
 		>
 			{shoppingPrice}
 			{divider}
 			<div className='shopping-cart-open-button-wrapper'>
-				<ShoppingCartIcon />
+				<ShoppingCartIcon className='shopping-cart-open-button-icon' />
 				{count}
 			</div>
 		</Button>
 	)
-}
-
-ShoppingCartOpenButton.propTypes = {
-	onClick: PropTypes.func,
-	disabled: PropTypes.bool,
-	active: PropTypes.bool
-}
-
-ShoppingCartOpenButton.defaultProps = {
-	onClick: () => {},
-	disabled: false,
-	active: false
 }
 
 export default ShoppingCartOpenButton

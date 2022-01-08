@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 
-import Selection from '../Selection/Selection.jsx'
-import Products from '../Products/Products.jsx'
+import Selection from '../components/Selection/Selection.jsx'
+import Products from '../components/Products/Products.jsx'
 
-import styles from './ContentWrapper.scss'
-
-const ContentWrapper = () => {
+const HomePage = () => {
 	const [filter, setFilter] = useState({})
 	const [sorting, setSorting] = useState({})
 
@@ -18,7 +16,7 @@ const ContentWrapper = () => {
 	}
 
 	return (
-		<div className='content-wrapper' style={styles}>
+		<div className='home'>
 			<Selection
 				onFilterChange={onFilterChange}
 				onSortingChange={onSortingChange}
@@ -28,4 +26,4 @@ const ContentWrapper = () => {
 	)
 }
 
-export default ContentWrapper
+export default HomePage

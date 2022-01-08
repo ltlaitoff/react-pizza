@@ -21,6 +21,16 @@ const getPizzas = (filterName = '', filterValue = '', sorting = '') => {
 	})
 }
 
+const getPizzasByIds = ids => {
+	const url = new URL(domen + '/pizzas')
+
+	ids.map(id => url.searchParams.append('id', id))
+
+	return fetch(url.toString()).then(response => {
+		return response.json()
+	})
+}
+
 const getSizes = () => {
 	return fetch(domen + '/sizes').then(response => {
 		return response.json()
@@ -33,4 +43,4 @@ const getDoughs = () => {
 	})
 }
 
-export { getCategories, getPizzas, getSizes, getDoughs }
+export { getCategories, getPizzas, getSizes, getDoughs, getPizzasByIds }
