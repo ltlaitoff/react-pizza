@@ -2,6 +2,7 @@ import React from 'react'
 
 import { ReactComponent as BasketIcon } from '../../../assets/images/favicon/shopping-cart.svg'
 import { ReactComponent as TrashIcon } from '../../../assets/images/favicon/trash.svg'
+import { ReactComponent as ArrowLeft } from '../../../assets/images/favicon/arrow_left.svg'
 import Button from '../../Button'
 import ContentItems from './ContentItems/ContentItems.jsx'
 
@@ -23,6 +24,13 @@ const ShoppingCartContent = () => {
 			</div>
 
 			<ContentItems />
+			<div className='content-footer'>
+				<Button className='content-return-back' href='/'>
+					<ArrowLeft className='content-return-back-icon' />
+					Вернуться назад
+				</Button>
+				<Button className='content-pay'>Оплатить сейчас</Button>
+			</div>
 		</div>
 	)
 }

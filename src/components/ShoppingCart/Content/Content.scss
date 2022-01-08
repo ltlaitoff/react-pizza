@@ -44,4 +44,44 @@
 			color: $dark-gray-35;
 		}
 	}
+
+	&-footer {
+		margin-top: 40px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&-return-back {
+		padding: 18px 35px;
+		display: flex;
+		align-items: center;
+		column-gap: 10px;
+
+		background-color: transparent;
+
+		border: 1px solid #d3d3d3;
+		border-radius: 30px;
+
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+
+		color: #cacaca;
+		&-icon {
+			fill: transparent;
+			stroke: #d3d3d3;
+		}
+	}
+
+	&-pay {
+		padding: 18px 35px;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		color: $white;
+	}
 }
