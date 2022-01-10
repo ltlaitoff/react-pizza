@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useReducer } from 'react'
+import React, { createContext, useContext, useReducer, useEffect } from 'react'
+
+import { localStorageSet, localStorageGet } from '../storage/localstorage.js'
 
 const ShoppingCartStateContext = createContext()
 const ShoppingCartDispatchContext = createContext()
@@ -32,8 +34,13 @@ const useShoppingCart = () => {
 }
 
 const shoppingCartReducer = (state, action) => {
-	console.log(state, action.count)
 	switch (action.type) {
+		case 'set': {
+			const newState = [...action.value]
+
+			return newState
+		}
+
 		case 'add': {
 			const stateCopy = [...state]
 
@@ -48,11 +55,13 @@ const shoppingCartReducer = (state, action) => {
 						count: stateCopy[itemId].count + action.count
 					}
 
+					localStorageSet(JSON.stringify(stateCopy))
+
 					return stateCopy
 				}
 			}
 
-			return [
+			const newState = [
 				...state,
 				{
 					id: action.id,
@@ -62,10 +71,14 @@ const shoppingCartReducer = (state, action) => {
 					count: action.count
 				}
 			]
+
+			localStorageSet(JSON.stringify(newState))
+
+			return newState
 		}
 
 		case 'remove': {
-			return state.flatMap(item => {
+			const newState = state.flatMap(item => {
 				if (
 					item.id === action.id &&
 					item.dough === action.dough &&
@@ -81,31 +94,13 @@ const shoppingCartReducer = (state, action) => {
 				return item
 			})
 
-			// for (let itemId in stateCopy) {
-			// 	if (
-			// 		stateCopy[itemId].id === action.id &&
-			// 		stateCopy[itemId].dough === action.dough &&
-			// 		stateCopy[itemId].size === action.size
-			// 	) {
-			// 		if (action.count !== undefined) {
-			// 			delete stateCopy[itemId]
-			// 			return stateCopy
-			// 		}
+			localStorageSet(JSON.stringify(newState))
+			return newState
+		}
 
-			// 		if (action.count >= stateCopy[itemId].count) {
-			// 			break
-			// 		}
-
-			// 		stateCopy[itemId] = {
-			// 			...stateCopy[itemId],
-			// 			count: stateCopy[itemId].count - action.count
-			// 		}
-
-			// 		return stateCopy
-			// 	}
-			// }
-
-			return [...state]
+		case 'remove-all': {
+			localStorageSet(JSON.stringify([]))
+			return []
 		}
 
 		default: {
@@ -116,6 +111,17 @@ const shoppingCartReducer = (state, action) => {
 
 const ShoppingCartProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(shoppingCartReducer, [])
+
+	useEffect(() => {
+		const localStorageValue = localStorageGet()
+
+		if (localStorageValue) {
+			dispatch({ type: 'set', value: localStorageGet() })
+		} else {
+			localStorageSet(JSON.stringify([]))
+		}
+	}, [])
+
 	return (
 		<ShoppingCartStateContext.Provider value={state}>
 			<ShoppingCartDispatchContext.Provider value={dispatch}>
