@@ -5,7 +5,10 @@ const localStorageSet = data => {
 }
 
 const localStorageGet = () => {
-	return JSON.parse(localStorage.getItem(localStorageKey))
+	const value = localStorage.getItem(localStorageKey)
+	if (!value) return null
+
+	return JSON.parse(value)
 }
 
 export { localStorageSet, localStorageGet }

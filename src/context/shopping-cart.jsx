@@ -115,8 +115,10 @@ const ShoppingCartProvider = ({ children }) => {
 	useEffect(() => {
 		const localStorageValue = localStorageGet()
 
-		if (localStorageValue !== undefined) {
+		if (localStorageValue) {
 			dispatch({ type: 'set', value: localStorageGet() })
+		} else {
+			localStorageSet(JSON.stringify([]))
 		}
 	}, [])
 
