@@ -28,7 +28,7 @@ const ProductSizes = ({ allSizes, productSizes, activeSize, onChange }) => {
 						textColor='dark-gray'
 						onClick={onClick(key)}
 					>
-						{size}
+						{size} см.
 					</Button>
 				)
 			})}
