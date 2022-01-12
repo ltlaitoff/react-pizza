@@ -6,7 +6,7 @@ import { ReactComponent as ArrowLeft } from '../../../assets/images/favicon/arro
 import { useShoppingCartDispatch } from '../../../context/shopping-cart.jsx'
 
 import Button from '../../Button'
-import ContentItems from './ContentItems/ContentItems.jsx'
+import ContentItems from './ContentItems.jsx'
 
 import styles from './Content.scss'
 

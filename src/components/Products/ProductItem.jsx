@@ -57,7 +57,7 @@ const ProductItem = ({ product, doughs, sizes }) => {
 					className='product-add'
 					backgroundColor='transparent'
 					borderColor='orange'
-					borderWidth='1'
+					borderWidth={1}
 					onClick={() =>
 						addNewProduct(product.id, activeDough, activeSize, product.price)
 					}

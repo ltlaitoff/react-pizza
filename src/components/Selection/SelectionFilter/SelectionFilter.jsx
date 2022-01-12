@@ -11,15 +11,17 @@ const sortById = (a, b) => {
 	return Number(a[0]) - Number(b[0])
 }
 
+const [allId, allName] = ['-1', 'Все']
+
 const SelectionFilter = ({ onChange }) => {
 	const [categories, setCategories] = useState({})
 	const [currentActiveId, setCurrentActiveId] = useState('-1')
 
 	useEffect(() => {
 		getCategories().then(categoriesDict => {
-			categoriesDict['-1'] = 'All'
+			categoriesDict[allId] = allName
 			setCategories(categoriesDict)
-			onChange('-1', categoriesDict['-1'])
+			onChange(allId, allName)
 		})
 	}, [])
 
