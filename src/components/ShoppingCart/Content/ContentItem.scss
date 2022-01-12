@@ -1,46 +1,12 @@
-@import '../../../../assets/scss/general.scss';
+@import '../../../assets/scss/general.scss';
 
 .content {
-	&-items {
-		&-footer {
-			margin-top: 40px;
-			display: flex;
-			justify-content: space-between;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 22px;
-			line-height: 27px;
-			letter-spacing: 0.01em;
-			color: $black;
-		}
-	}
-
-	&-all {
-		&-count {
-			&-bold {
-				font-weight: bold;
-			}
-		}
-
-		&-price {
-			&-bold {
-				font-weight: bold;
-				color: $accent;
-			}
-		}
-	}
-
 	&-item {
 		display: flex;
 		justify-content: space-between;
-
-		&-divider {
-			margin: 30px 0;
-			border: none;
-			background: #f4f4f4;
-			height: 1px;
-			width: 100%;
-		}
+		margin: 30px 0;
+		padding-top: 30px;
+		border-top: 1px solid #f4f4f4;
 
 		&-wrapper {
 			&-first {
