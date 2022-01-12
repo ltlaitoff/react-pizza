@@ -43,7 +43,7 @@ const ContentItems = () => {
 
 				return (
 					<ContentItem
-						key={item.id}
+						key={`${item.id}-${item.size}-${item.dough}`}
 						apiItemData={apiItem}
 						itemData={item}
 						doughs={doughs}
