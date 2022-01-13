@@ -4,10 +4,11 @@ import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import ShoppingCartPage from './pages/ShoppingCartPage'
 import NotFoundPage from './pages/NotFoundPage'
-import Main from './components/Main'
+import Main from './components/Main/Main'
 import Header from './containers/Header'
 
 import { ShoppingCartProvider } from './context/shopping-cart.jsx'
+
 const App = () => {
 	return (
 		<>
