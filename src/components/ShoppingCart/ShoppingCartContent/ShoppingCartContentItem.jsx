@@ -38,19 +38,25 @@ const ShoppingCartContentItem = ({ apiItemData, itemData, doughs, sizes }) => {
 	const descr = `${doughs[itemData.dough]} тесто, ${sizes[itemData.size]} см.`
 
 	return (
-		<div className='content-item' style={styles}>
-			<div className='content-item-wrapper-first'>
-				<img src={apiItemData.imageUrl} alt='pizza' className='content-img' />
-				<div className='content-block-info'>
-					<div className='content-item-title'>{apiItemData.name}</div>
-					<div className='content-item-descr'>{descr}</div>
+		<div className='shopping-cart-content-item' style={styles}>
+			<div className='shopping-cart-content-item-wrapper-first'>
+				<img
+					src={apiItemData.imageUrl}
+					alt='pizza'
+					className='shopping-cart-content-item-img'
+				/>
+				<div className='shopping-cart-content-item-block-info'>
+					<div className='shopping-cart-content-item-title'>
+						{apiItemData.name}
+					</div>
+					<div className='shopping-cart-content-item-descr'>{descr}</div>
 				</div>
 			</div>
 
-			<div className='content-item-wrapper-two'>
-				<div className='content-block-count'>
+			<div className='shopping-cart-content-item-wrapper-two'>
+				<div className='shopping-cart-content-item-block-count'>
 					<Button
-						className='content-minus'
+						className='shopping-cart-content-item-minus'
 						onClick={onRemoveClick(
 							itemData.id,
 							itemData.dough,
@@ -58,23 +64,27 @@ const ShoppingCartContentItem = ({ apiItemData, itemData, doughs, sizes }) => {
 							1
 						)}
 					>
-						<Minus className='content-minus-icon' />
+						<Minus className='shopping-cart-content-item-minus-icon' />
 					</Button>
-					<div className='content-count'>{itemData.count}</div>
+					<div className='shopping-cart-content-item-count'>
+						{itemData.count}
+					</div>
 					<Button
-						className='content-plus'
+						className='shopping-cart-content-item-plus'
 						onClick={onAddClick(itemData.id, itemData.dough, itemData.size, 1)}
 					>
-						<Plus className='content-plus-icon' />
+						<Plus className='shopping-cart-content-item-plus-icon' />
 					</Button>
 				</div>
 
-				<div className='content-price'>{apiItemData.price} ₽</div>
+				<div className='shopping-cart-content-item-price'>
+					{apiItemData.price} ₽
+				</div>
 				<Button
-					className='content-delete'
+					className='shopping-cart-content-item-delete'
 					onClick={onRemoveClick(itemData.id, itemData.dough, itemData.size)}
 				>
-					<Cross className='content-delete-icon' />
+					<Cross className='shopping-cart-content-item-delete-icon' />
 				</Button>
 			</div>
 		</div>

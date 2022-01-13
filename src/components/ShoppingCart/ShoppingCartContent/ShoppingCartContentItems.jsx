@@ -33,7 +33,7 @@ const ShoppingCartContentItems = () => {
 	}, [state])
 
 	return (
-		<div className='content-items' style={styles}>
+		<div className='shopping-cart-content-items' style={styles}>
 			{state.map(item => {
 				if (Object.keys(pizzas).length === 0) {
 					return 'Загрузка...'
@@ -52,19 +52,19 @@ const ShoppingCartContentItems = () => {
 				)
 			})}
 
-			<div className='content-items-footer'>
-				<div className='content-all-count'>
+			<div className='shopping-cart-content-items-footer'>
+				<div className='shopping-cart-content-items-footer-count'>
 					Всего пицц:{' '}
-					<span className='content-all-count-bold'>
+					<span className='shopping-cart-content-items-footer-count-bold'>
 						{Object.values(state).reduce(
 							(prev, current) => prev + current.count,
 							0
 						)}
 					</span>
 				</div>
-				<div className='content-all-price'>
+				<div className='shopping-cart-content-items-footer-price'>
 					Сумма заказа:{' '}
-					<span className='content-all-price-bold'>
+					<span className='shopping-cart-content-items-footer-price-bold'>
 						{Object.values(state).reduce(
 							(prev, current) => prev + current.price * current.count,
 							0

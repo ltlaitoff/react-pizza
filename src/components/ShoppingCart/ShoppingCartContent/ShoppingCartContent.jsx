@@ -14,29 +14,31 @@ const ShoppingCartContent = () => {
 	const shoppingCartDispatch = useShoppingCartDispatch()
 
 	return (
-		<div className='content' style={styles}>
-			<div className='content-header'>
-				<div className='content-title'>
-					<BasketIcon className='content-title-icon' />
-					<div className='content-title-text'>Корзина</div>
+		<div className='shopping-cart-content' style={styles}>
+			<div className='shopping-cart-content-header'>
+				<div className='shopping-cart-content-title'>
+					<BasketIcon className='shopping-cart-content-title-icon' />
+					<div className='shopping-cart-content-title-text'>Корзина</div>
 				</div>
 
 				<Button
-					className='content-clear'
+					className='shopping-cart-content-clear'
 					onClick={() => shoppingCartDispatch({ type: 'remove-all' })}
 				>
-					<TrashIcon className='content-clear-icon' />
-					<div className='content-clear-text'>Очистить корзину</div>
+					<TrashIcon className='shopping-cart-content-clear-icon' />
+					<div className='shopping-cart-content-clear-text'>
+						Очистить корзину
+					</div>
 				</Button>
 			</div>
 
 			<ShoppingCartContentItems />
-			<div className='content-footer'>
-				<Button className='content-return-back' href='/'>
-					<ArrowLeft className='content-return-back-icon' />
+			<div className='shopping-cart-content-footer'>
+				<Button className='shopping-cart-content-return-back' href='/'>
+					<ArrowLeft className='shopping-cart-content-return-back-icon' />
 					Вернуться назад
 				</Button>
-				<Button className='content-pay'>Оплатить сейчас</Button>
+				<Button className='shopping-cart-content-pay'>Оплатить сейчас</Button>
 			</div>
 		</div>
 	)

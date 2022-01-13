@@ -1,48 +1,46 @@
 @import '../../../assets/scss/general.scss';
 
-.content {
-	&-item {
-		display: flex;
-		justify-content: space-between;
-		margin: 30px 0;
-		padding-top: 30px;
-		border-top: 1px solid #f4f4f4;
+.shopping-cart-content-item {
+	display: flex;
+	justify-content: space-between;
+	margin: 30px 0;
+	padding-top: 30px;
+	border-top: 1px solid #f4f4f4;
 
-		&-wrapper {
-			&-first {
-				min-width: 375px;
-				display: flex;
-				align-items: center;
-				column-gap: 15px;
-			}
-
-			&-two {
-				width: 100%;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				margin-left: 70px;
-			}
+	&-wrapper {
+		&-first {
+			min-width: 375px;
+			display: flex;
+			align-items: center;
+			column-gap: 15px;
 		}
 
-		&-title {
-			font-style: normal;
-			font-weight: bold;
-			font-size: 22px;
-			line-height: 27px;
-			letter-spacing: 0.01em;
-			color: $black;
+		&-two {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-left: 70px;
 		}
+	}
 
-		&-descr {
-			margin-top: 3px;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 18px;
-			line-height: 22px;
-			letter-spacing: 0.01em;
-			color: #8d8d8d;
-		}
+	&-title {
+		font-style: normal;
+		font-weight: bold;
+		font-size: 22px;
+		line-height: 27px;
+		letter-spacing: 0.01em;
+		color: $black;
+	}
+
+	&-descr {
+		margin-top: 3px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 22px;
+		letter-spacing: 0.01em;
+		color: #8d8d8d;
 	}
 
 	&-img {
