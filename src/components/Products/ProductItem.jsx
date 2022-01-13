@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import ProductDoughs from './ProductDoughs.jsx'
 import ProductSizes from './ProductSizes.jsx'
-import Button from '../Button'
+import Button from '../Button/Button'
 
 import { useShoppingCartDispatch } from '../../context/shopping-cart.jsx'
 

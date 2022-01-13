@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '../../Button'
+import Button from '../../Button/Button'
 
 import { useShoppingCartDispatch } from '../../../context/shopping-cart.jsx'
 

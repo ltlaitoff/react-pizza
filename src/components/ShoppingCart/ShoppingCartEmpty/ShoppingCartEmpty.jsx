@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '../../Button'
+import Button from '../../Button/Button'
 
 import { ReactComponent as EmptyIcon } from '../../../assets/images/favicon/shopping-cart-clear-bg.svg'
 

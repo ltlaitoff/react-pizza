@@ -5,7 +5,7 @@ import { ReactComponent as TrashIcon } from '../../../assets/images/favicon/tras
 import { ReactComponent as ArrowLeft } from '../../../assets/images/favicon/arrow_left.svg'
 import { useShoppingCartDispatch } from '../../../context/shopping-cart.jsx'
 
-import Button from '../../Button'
+import Button from '../../Button/Button'
 import ContentItems from './ContentItems.jsx'
 
 import styles from './Content.scss'
