@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import Logo from '../../components/Logo/Logo'
 import ShoppingCartOpenButton from '../../components/ShoppingCart/ShoppingCartOpenButton/ShoppingCartOpenButton'
 
-import styles from './header.scss'
+import styles from './Header.scss'
 
 const Header = () => {
 	const location = useLocation()
