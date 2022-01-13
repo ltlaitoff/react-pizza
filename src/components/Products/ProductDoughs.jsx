@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '../Button'
+import Button from '../Button/Button'
 
 import styles from './ProductDoughs.scss'
 
@@ -12,16 +12,16 @@ const ProductDoughs = ({ allDoughs, productDoughs, activeDough, onChange }) => {
 	}
 
 	return (
-		<div className='product-doughs' style={styles}>
+		<div className='products-item-doughs' style={styles}>
 			{Object.entries(allDoughs).map(([key, dough]) => {
 				return (
 					<Button
 						key={key}
-						className='product-doughs-button'
-						disabledClass='product-doughs-button-disabled'
+						className='products-item-doughs-button'
+						disabledClass='products-item-doughs-button-disabled'
 						disabled={!productDoughs.includes(key)}
 						active={key === activeDough}
-						activeClass='product-doughs-button-active'
+						activeClass='products-item-doughs-button-active'
 						style={{ width: buttonSize }}
 						borderRadius='sm'
 						backgroundColor='white'

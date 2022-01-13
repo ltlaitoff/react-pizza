@@ -1,20 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Button from '../../Button/index.jsx'
+import Button from '../../Button/Button'
 
 import styles from './SelectionSortingList.scss'
 
 const SelectionSortingList = ({ source, onClick, current }) => {
 	return (
-		<div className='sorting-list' style={styles}>
+		<div className='selection-sorting-list' style={styles}>
 			{source.map((item, index) => {
 				return (
 					<Button
 						key={index}
 						className={
-							'sorting-list-item ' +
-							(index === current && 'sorting-list-item-active')
+							'selection-sorting-list-item ' +
+							(index === current && 'selection-sorting-list-item-active')
 						}
 						backgroundColor='transparent'
 						textColor='dark-gray'

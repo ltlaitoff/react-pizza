@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Button from '../../Button/index.jsx'
+import Button from '../../Button/Button'
 
 import styles from './SelectionSortingOpenButton.scss'
 
 const SelectionSortingOpenButton = ({ onClick, children }) => {
 	return (
 		<Button
-			className='sorting-open-button'
+			className='selection-sorting-open-button'
 			backgroundColor='transparent'
 			textColor='dark-gray'
 			style={styles}

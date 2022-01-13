@@ -9,7 +9,7 @@ const getCategories = () => {
 const getPizzas = (filterName = '', filterValue = '', sorting = '') => {
 	const url = new URL(domen + '/pizzas')
 
-	if (filterValue !== '-1') {
+	if (filterName !== '' && filterValue !== '-1') {
 		url.searchParams.append(filterName + '_like', filterValue)
 	}
 

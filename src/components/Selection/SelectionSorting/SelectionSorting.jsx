@@ -29,11 +29,14 @@ const SelectionSorting = ({ onChange }) => {
 	}
 
 	return (
-		<div className='sorting' style={styles}>
+		<div className='selection-sorting' style={styles}>
 			<img
 				src={arrowUp}
 				alt='arrowUP'
-				className={'sorting-icon ' + (listOpen && 'sorting-icon-reflect')}
+				className={
+					'selection-sorting-icon ' +
+					(listOpen && 'selection-sorting-icon-reflect')
+				}
 			/>
 			Сортировка по:
 			<SelectionSortingOpenButton onClick={toggleListVisibility}>
