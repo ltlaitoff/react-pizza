@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-import ContentItem from './ContentItem'
+import ShoppingCartContentItem from './ShoppingCartContentItem'
 
 import { useShoppingCartState } from '../../../context/shopping-cart.jsx'
 import { getSizes, getDoughs, getPizzasByIds } from '../../../api/api.js'
 
-import styles from './ContentItems.scss'
+import styles from './ShoppingCartContentItems.scss'
 
-const ContentItems = () => {
+const ShoppingCartContentItems = () => {
 	const state = useShoppingCartState()
 	const [sizes, setSizes] = useState({})
 	const [doughs, setDoughs] = useState({})
@@ -33,7 +33,7 @@ const ContentItems = () => {
 	}, [state])
 
 	return (
-		<div className='content-items' style={styles}>
+		<div className='shopping-cart-content-items' style={styles}>
 			{state.map(item => {
 				if (Object.keys(pizzas).length === 0) {
 					return 'Загрузка...'
@@ -42,7 +42,7 @@ const ContentItems = () => {
 				const apiItem = pizzas[item.id]
 
 				return (
-					<ContentItem
+					<ShoppingCartContentItem
 						key={`${item.id}-${item.size}-${item.dough}`}
 						apiItemData={apiItem}
 						itemData={item}
@@ -52,19 +52,19 @@ const ContentItems = () => {
 				)
 			})}
 
-			<div className='content-items-footer'>
-				<div className='content-all-count'>
+			<div className='shopping-cart-content-items-footer'>
+				<div className='shopping-cart-content-items-footer-count'>
 					Всего пицц:{' '}
-					<span className='content-all-count-bold'>
+					<span className='shopping-cart-content-items-footer-count-bold'>
 						{Object.values(state).reduce(
 							(prev, current) => prev + current.count,
 							0
 						)}
 					</span>
 				</div>
-				<div className='content-all-price'>
+				<div className='shopping-cart-content-items-footer-price'>
 					Сумма заказа:{' '}
-					<span className='content-all-price-bold'>
+					<span className='shopping-cart-content-items-footer-price-bold'>
 						{Object.values(state).reduce(
 							(prev, current) => prev + current.price * current.count,
 							0
@@ -76,4 +76,4 @@ const ContentItems = () => {
 	)
 }
 
-export default ContentItems
+export default ShoppingCartContentItems

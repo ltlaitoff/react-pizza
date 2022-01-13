@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-import Button from '../../Button/index.jsx'
+import Button from '../../Button/Button'
 
 import { getCategories } from '../../../api/api.js'
 

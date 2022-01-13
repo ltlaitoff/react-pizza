@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import logo from '../../assets/images/logo.png'
-import styles from './logo.scss'
+import styles from './Logo.scss'
 
 const Logo = () => {
 	return (

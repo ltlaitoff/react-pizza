@@ -1,6 +1,6 @@
 @import '../../../assets/scss/general.scss';
 
-.content {
+.shopping-cart-content {
 	&-items {
 		&-footer {
 			margin-top: 40px;
@@ -12,20 +12,18 @@
 			line-height: 27px;
 			letter-spacing: 0.01em;
 			color: $black;
-		}
-	}
 
-	&-all {
-		&-count {
-			&-bold {
-				font-weight: bold;
+			&-count {
+				&-bold {
+					font-weight: bold;
+				}
 			}
-		}
 
-		&-price {
-			&-bold {
-				font-weight: bold;
-				color: $accent;
+			&-price {
+				&-bold {
+					font-weight: bold;
+					color: $accent;
+				}
 			}
 		}
 	}

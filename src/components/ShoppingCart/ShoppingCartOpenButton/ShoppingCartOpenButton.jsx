@@ -1,10 +1,10 @@
 import React from 'react'
-import Button from '../../Button'
+import Button from '../../Button/Button'
 import { ReactComponent as ShoppingCartIcon } from '../../../assets/images/favicon/shopping-cart.svg'
 
 import { useShoppingCartState } from '../../../context/shopping-cart.jsx'
 
-import styles from './shoppingCartOpenButton.scss'
+import styles from './ShoppingCartOpenButton.scss'
 
 const ShoppingCartOpenButton = () => {
 	const shoppingCartState = useShoppingCartState()
