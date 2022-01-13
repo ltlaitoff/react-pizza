@@ -8,9 +8,9 @@ import { ReactComponent as Minus } from '../../../assets/images/favicon/minus.sv
 import { ReactComponent as Plus } from '../../../assets/images/favicon/plus.svg'
 import { ReactComponent as Cross } from '../../../assets/images/favicon/cross.svg'
 
-import styles from './ContentItem.scss'
+import styles from './ShoppingCartContentItem.scss'
 
-const ContentItem = ({ apiItemData, itemData, doughs, sizes }) => {
+const ShoppingCartContentItem = ({ apiItemData, itemData, doughs, sizes }) => {
 	const dispatch = useShoppingCartDispatch()
 
 	const onRemoveClick = (id, dough, size, count) => {
@@ -81,4 +81,4 @@ const ContentItem = ({ apiItemData, itemData, doughs, sizes }) => {
 	)
 }
 
-export default ContentItem
+export default ShoppingCartContentItem

@@ -4,7 +4,7 @@ import { ReactComponent as ShoppingCartIcon } from '../../../assets/images/favic
 
 import { useShoppingCartState } from '../../../context/shopping-cart.jsx'
 
-import styles from './shoppingCartOpenButton.scss'
+import styles from './ShoppingCartOpenButton.scss'
 
 const ShoppingCartOpenButton = () => {
 	const shoppingCartState = useShoppingCartState()

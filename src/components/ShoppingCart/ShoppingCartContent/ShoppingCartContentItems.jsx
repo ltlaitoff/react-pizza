@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-import ContentItem from './ContentItem'
+import ShoppingCartContentItem from './ShoppingCartContentItem'
 
 import { useShoppingCartState } from '../../../context/shopping-cart.jsx'
 import { getSizes, getDoughs, getPizzasByIds } from '../../../api/api.js'
 
-import styles from './ContentItems.scss'
+import styles from './ShoppingCartContentItems.scss'
 
-const ContentItems = () => {
+const ShoppingCartContentItems = () => {
 	const state = useShoppingCartState()
 	const [sizes, setSizes] = useState({})
 	const [doughs, setDoughs] = useState({})
@@ -42,7 +42,7 @@ const ContentItems = () => {
 				const apiItem = pizzas[item.id]
 
 				return (
-					<ContentItem
+					<ShoppingCartContentItem
 						key={`${item.id}-${item.size}-${item.dough}`}
 						apiItemData={apiItem}
 						itemData={item}
@@ -76,4 +76,4 @@ const ContentItems = () => {
 	)
 }
 
-export default ContentItems
+export default ShoppingCartContentItems

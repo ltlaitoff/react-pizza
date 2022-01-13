@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useShoppingCartState } from '../../context/shopping-cart.jsx'
 import ShoppingCartEmpty from './ShoppingCartEmpty/ShoppingCartEmpty'
-import ShoppingCartContent from './Content/Content.jsx'
+import ShoppingCartContent from './ShoppingCartContent/ShoppingCartContent.jsx'
 
 import styles from './ShoppingCart.scss'
 

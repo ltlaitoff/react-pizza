@@ -6,9 +6,9 @@ import { ReactComponent as ArrowLeft } from '../../../assets/images/favicon/arro
 import { useShoppingCartDispatch } from '../../../context/shopping-cart.jsx'
 
 import Button from '../../Button/Button'
-import ContentItems from './ContentItems.jsx'
+import ShoppingCartContentItems from './ShoppingCartContentItems.jsx'
 
-import styles from './Content.scss'
+import styles from './ShoppingCartContent.scss'
 
 const ShoppingCartContent = () => {
 	const shoppingCartDispatch = useShoppingCartDispatch()
@@ -30,7 +30,7 @@ const ShoppingCartContent = () => {
 				</Button>
 			</div>
 
-			<ContentItems />
+			<ShoppingCartContentItems />
 			<div className='content-footer'>
 				<Button className='content-return-back' href='/'>
 					<ArrowLeft className='content-return-back-icon' />
