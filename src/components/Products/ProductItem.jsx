@@ -30,14 +30,14 @@ const ProductItem = ({ product, doughs, sizes }) => {
 	}
 
 	return (
-		<div className='product' key={product.id} style={styles}>
+		<div className='products-item' key={product.id} style={styles}>
 			<img
 				src={product.imageUrl}
 				alt={product.name}
-				className='product-image'
+				className='products-item-image'
 			/>
-			<div className='product-title'>{product.name}</div>
-			<div className='product-settings-wrapper'>
+			<div className='products-item-title'>{product.name}</div>
+			<div className='products-item-settings-wrapper'>
 				<ProductDoughs
 					allDoughs={doughs}
 					productDoughs={product.dough}
@@ -51,10 +51,10 @@ const ProductItem = ({ product, doughs, sizes }) => {
 					onChange={onSizeChange}
 				/>
 			</div>
-			<div className='product-bottom-wrapper'>
-				<div className='product-price'>от {product.price} ₽</div>
+			<div className='products-item-bottom-wrapper'>
+				<div className='products-item-price'>от {product.price} ₽</div>
 				<Button
-					className='product-add'
+					className='products-item-add'
 					backgroundColor='transparent'
 					borderColor='orange'
 					borderWidth={1}
@@ -62,7 +62,7 @@ const ProductItem = ({ product, doughs, sizes }) => {
 						addNewProduct(product.id, activeDough, activeSize, product.price)
 					}
 				>
-					<PlusIcon className='product-add-icon' />
+					<PlusIcon className='products-item-add-icon' />
 					Добавить
 				</Button>
 			</div>

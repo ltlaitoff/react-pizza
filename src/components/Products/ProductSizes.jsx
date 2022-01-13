@@ -12,16 +12,16 @@ const ProductSizes = ({ allSizes, productSizes, activeSize, onChange }) => {
 	}
 
 	return (
-		<div className='product-sizes' style={styles}>
+		<div className='products-item-sizes' style={styles}>
 			{Object.entries(allSizes).map(([key, size]) => {
 				return (
 					<Button
 						key={key}
-						className='product-sizes-button'
-						disabledClass='product-sizes-button-disabled'
+						className='products-item-sizes-button'
+						disabledClass='products-item-sizes-button-disabled'
 						disabled={!productSizes.includes(key)}
 						active={activeSize === key}
-						activeClass='product-sizes-button-active'
+						activeClass='products-item-sizes-button-active'
 						style={{ width: buttonSize }}
 						borderRadius='sm'
 						backgroundColor='white'
