@@ -8,7 +8,7 @@ import styles from './SelectionSortingOpenButton.scss'
 const SelectionSortingOpenButton = ({ onClick, children }) => {
 	return (
 		<Button
-			className='sorting-open-button'
+			className='selection-sorting-open-button'
 			backgroundColor='transparent'
 			textColor='dark-gray'
 			style={styles}
