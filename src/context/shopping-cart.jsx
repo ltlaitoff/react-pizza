@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react'
 
-import { localStorageSet, localStorageGet } from '../storage/localstorage.js'
+import { localStorageSet, localStorageGet } from '../utils/localstorage.js'
+import {
+	broadcastCreateChannel,
+	broadcastPostMessage
+} from '../utils/broadcastChannel.js'
 
 const ShoppingCartStateContext = createContext()
 const ShoppingCartDispatchContext = createContext()
@@ -56,6 +60,7 @@ const shoppingCartReducer = (state, action) => {
 					}
 
 					localStorageSet(JSON.stringify(stateCopy))
+					broadcastPostMessage(JSON.stringify(stateCopy))
 
 					return stateCopy
 				}
@@ -73,6 +78,7 @@ const shoppingCartReducer = (state, action) => {
 			]
 
 			localStorageSet(JSON.stringify(newState))
+			broadcastPostMessage(JSON.stringify(newState))
 
 			return newState
 		}
@@ -95,11 +101,13 @@ const shoppingCartReducer = (state, action) => {
 			})
 
 			localStorageSet(JSON.stringify(newState))
+			broadcastPostMessage(JSON.stringify(newState))
 			return newState
 		}
 
 		case 'remove-all': {
 			localStorageSet(JSON.stringify([]))
+			broadcastPostMessage(JSON.stringify([]))
 			return []
 		}
 
@@ -112,7 +120,14 @@ const shoppingCartReducer = (state, action) => {
 const ShoppingCartProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(shoppingCartReducer, [])
 
+	const onBroadcastMessage = message => {
+		console.log(message)
+		dispatch({ type: 'set', value: JSON.parse(message) })
+	}
+
 	useEffect(() => {
+		broadcastCreateChannel(onBroadcastMessage)
+
 		const localStorageValue = localStorageGet()
 
 		if (localStorageValue) {
