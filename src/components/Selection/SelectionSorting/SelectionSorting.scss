@@ -11,9 +11,4 @@
 	line-height: 17px;
 	letter-spacing: 0.015em;
 	@include text-dark-gray;
-	&-icon {
-		&-reflect {
-			transform: rotate(180deg);
-		}
-	}
 }

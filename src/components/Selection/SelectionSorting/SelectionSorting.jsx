@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
+import SelectionSortingOrderButton from './SelectionSortingOrderButton.jsx'
 import SelectionSortingOpenButton from './SelectionSortingOpenButton.jsx'
 import SelectionSortingList from './SelectionSortingList.jsx'
 
-import arrowUp from '../../../assets/images/favicon/arrow-up.svg'
 import styles from './SelectionSorting.scss'
 
 const SORT_TYPES = ['популярности', 'цене', 'алфавиту']
 
 const SelectionSorting = ({ onChange }) => {
 	const [listOpen, setListOpen] = useState(false)
+	const [orderStatus, setOrderStatus] = useState('desc')
 	const [currentSortId, setCurrentSortId] = useState(0)
 
 	useEffect(() => {
-		onChange(0, SORT_TYPES[currentSortId])
+		onChange(0, SORT_TYPES[currentSortId], orderStatus)
 	}, [])
 
 	const toggleListVisibility = () => setListOpen(!listOpen)
@@ -25,18 +26,19 @@ const SelectionSorting = ({ onChange }) => {
 		if (currentSortId === index) return
 		setCurrentSortId(index)
 
-		onChange(index, SORT_TYPES[index])
+		onChange(index, SORT_TYPES[index], orderStatus)
+	}
+
+	const orderStatusChange = state => {
+		setOrderStatus(state)
+		onChange(currentSortId, SORT_TYPES[currentSortId], state)
 	}
 
 	return (
 		<div className='selection-sorting' style={styles}>
-			<img
-				src={arrowUp}
-				alt='arrowUP'
-				className={
-					'selection-sorting-icon ' +
-					(listOpen && 'selection-sorting-icon-reflect')
-				}
+			<SelectionSortingOrderButton
+				currentStatus={orderStatus}
+				onClick={orderStatusChange}
 			/>
 			Сортировка по:
 			<SelectionSortingOpenButton onClick={toggleListVisibility}>
