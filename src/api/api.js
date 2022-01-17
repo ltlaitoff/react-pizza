@@ -6,7 +6,12 @@ const getCategories = () => {
 	})
 }
 
-const getPizzas = (filterName = '', filterValue = '', sorting = '') => {
+const getPizzas = (
+	filterName = '',
+	filterValue = '',
+	sorting = '',
+	sortingOrder = 'asc'
+) => {
 	const url = new URL(domen + '/pizzas')
 
 	if (filterName !== '' && filterValue !== '-1') {
@@ -14,7 +19,7 @@ const getPizzas = (filterName = '', filterValue = '', sorting = '') => {
 	}
 
 	url.searchParams.append('_sort', sorting)
-	url.searchParams.append('_order', 'desc')
+	url.searchParams.append('_order', sortingOrder)
 
 	return fetch(url.toString()).then(response => {
 		return response.json()
