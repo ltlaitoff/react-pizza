@@ -15,9 +15,12 @@ const ProductsItems = ({ filter, sorting, sizes, doughs }) => {
 			2: 'name'
 		}
 
-		getPizzas('categories', filter.id, sortingValue[sorting.id]).then(value =>
-			setProducts(value)
-		)
+		getPizzas(
+			'categories',
+			filter.id,
+			sortingValue[sorting.id],
+			sorting.order
+		).then(value => setProducts(value))
 	}, [filter, sorting])
 
 	return (

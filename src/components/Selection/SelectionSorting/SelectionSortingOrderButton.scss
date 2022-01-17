@@ -1,0 +1,8 @@
+.selection-sorting-order {
+	background-color: transparent;
+	&-icon {
+		&-reflect {
+			transform: rotate(180deg);
+		}
+	}
+}

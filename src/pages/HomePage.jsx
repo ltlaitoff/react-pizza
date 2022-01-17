@@ -11,8 +11,8 @@ const HomePage = () => {
 		setFilter({ id: filterId, name: filterName })
 	}
 
-	const onSortingChange = (sortingId, sortingName) => {
-		setSorting({ id: sortingId, name: sortingName })
+	const onSortingChange = (sortingId, sortingName, sortingOrder) => {
+		setSorting({ id: sortingId, name: sortingName, order: sortingOrder })
 	}
 
 	return (
