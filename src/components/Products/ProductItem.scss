@@ -46,6 +46,8 @@
 	}
 
 	&-add {
+		transition: 0.4s all;
+		position: relative;
 		min-height: 40px;
 		padding: 0 18px;
 		display: flex;
@@ -58,6 +60,8 @@
 		line-height: 19px;
 		color: $accent;
 
+		z-index: 10;
+
 		&-icon {
 			width: 12px;
 			fill: $accent;
@@ -69,8 +73,17 @@
 			color: $white;
 			border: none;
 
-			.product-add-icon {
+			.products-item-add-icon {
 				fill: $white;
+			}
+		}
+
+		&-added {
+			color: #54c213;
+			border-color: #40970d;
+
+			.products-item-add-icon {
+				fill: #54c213;
 			}
 		}
 	}

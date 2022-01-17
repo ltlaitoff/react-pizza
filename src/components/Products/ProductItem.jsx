@@ -7,18 +7,29 @@ import Button from '../Button/Button'
 import { useShoppingCartDispatch } from '../../context/shopping-cart.jsx'
 
 import { ReactComponent as PlusIcon } from '../../assets/images/favicon/plus.svg'
+import { ReactComponent as CheckmarkIcon } from '../../assets/images/favicon/checkmark.svg'
 
 import styles from './ProductItem.scss'
+
+const inscriptionAddedVisibleTime = 1000
 
 const ProductItem = ({ product, doughs, sizes }) => {
 	const [activeSize, setActiveSize] = useState(product.sizes[0])
 	const [activeDough, setActiveDough] = useState(product.dough[0])
+	const [inscriptionAddedVisible, setInscriptionAddedVisible] = useState(false)
+
 	const shoppingCartDispatch = useShoppingCartDispatch()
 
 	const onSizeChange = newSize => setActiveSize(newSize)
 	const onDoughChange = newDough => setActiveDough(newDough)
 
 	const addNewProduct = (id, dough, size, price) => {
+		setInscriptionAddedVisible(true)
+
+		setTimeout(() => {
+			setInscriptionAddedVisible(false)
+		}, inscriptionAddedVisibleTime)
+
 		shoppingCartDispatch({
 			type: 'add',
 			id,
@@ -54,7 +65,9 @@ const ProductItem = ({ product, doughs, sizes }) => {
 			<div className='products-item-bottom-wrapper'>
 				<div className='products-item-price'>от {product.price} ₽</div>
 				<Button
-					className='products-item-add'
+					className={`products-item-add ${
+						inscriptionAddedVisible ? 'products-item-add-added' : ''
+					}`}
 					backgroundColor='transparent'
 					borderColor='orange'
 					borderWidth={1}
@@ -62,8 +75,17 @@ const ProductItem = ({ product, doughs, sizes }) => {
 						addNewProduct(product.id, activeDough, activeSize, product.price)
 					}
 				>
-					<PlusIcon className='products-item-add-icon' />
-					Добавить
+					{inscriptionAddedVisible ? (
+						<>
+							<CheckmarkIcon className='products-item-add-icon' />
+							Добавлено
+						</>
+					) : (
+						<>
+							<PlusIcon className='products-item-add-icon' />
+							Добавить
+						</>
+					)}
 				</Button>
 			</div>
 		</div>
