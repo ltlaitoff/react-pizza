@@ -19,4 +19,10 @@
 			@include text-white;
 		}
 	}
+
+	@media (max-width: 900px) {
+		flex-wrap: wrap;
+		justify-content: center;
+		row-gap: 10px;
+	}
 }

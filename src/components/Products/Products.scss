@@ -10,5 +10,13 @@
 		line-height: 39px;
 		letter-spacing: 0.01em;
 		@include text-black;
+
+		@media (max-width: 1340px) {
+			text-align: center;
+		}
+	}
+
+	@media (max-width: 1340px) {
+		padding: 0 10px;
 	}
 }
