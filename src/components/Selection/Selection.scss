@@ -1,5 +1,16 @@
 .selection {
-  padding: 40px 48px 32px 67px;
-  display: flex;
-  justify-content: space-between;
+	padding: 40px 48px 32px 67px;
+	display: flex;
+	justify-content: space-between;
+
+	@media (max-width: 1150px) {
+		flex-wrap: wrap;
+		column-gap: 100px;
+		row-gap: 30px;
+		justify-content: center;
+	}
+	@media (max-width: 900px) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 }

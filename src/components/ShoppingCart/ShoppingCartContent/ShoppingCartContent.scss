@@ -5,14 +5,36 @@
 	min-width: 830px;
 	min-height: 625px;
 
+	@media (max-width: 1340px) {
+		margin-top: 30px;
+	}
+
+	@media (max-width: 860px) {
+		min-width: 0;
+		width: 100%;
+	}
+
 	&-header {
 		display: flex;
 		justify-content: space-between;
+		column-gap: 10px;
+
+		@media (max-width: 380px) {
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			row-gap: 10px;
+		}
 	}
 
 	&-title {
 		display: flex;
 		column-gap: 17px;
+
+		@media (max-width: 380px) {
+			width: 100%;
+			justify-content: center;
+		}
 
 		&-icon {
 			width: 30px;
@@ -49,6 +71,13 @@
 		margin-top: 40px;
 		display: flex;
 		justify-content: space-between;
+
+		@media (max-width: 450px) {
+			row-gap: 10px;
+			column-gap: 100px;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
 	}
 
 	&-return-back {

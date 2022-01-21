@@ -22,4 +22,8 @@ body,
 	background-color: $yellow !important;
 	display: flex;
 	justify-content: center;
+
+	@media (max-width: 1340px) {
+		padding: 0;
+	}
 }

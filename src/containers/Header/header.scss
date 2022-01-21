@@ -1,5 +1,12 @@
 .header {
-  display: flex;
-  justify-content: space-between; 
-  padding: 50px 40px 35px 75px;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 40px 35px 75px;
+
+	@media (max-width: 625px) {
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		row-gap: 20px;
+	}
 }
