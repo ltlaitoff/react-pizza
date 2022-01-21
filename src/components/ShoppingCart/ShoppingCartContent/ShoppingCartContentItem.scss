@@ -7,12 +7,30 @@
 	padding-top: 30px;
 	border-top: 1px solid #f4f4f4;
 
+	@media (max-width: 580px) {
+		flex-wrap: wrap;
+		row-gap: 10px;
+		justify-content: center;
+	}
+
 	&-wrapper {
 		&-first {
 			min-width: 375px;
 			display: flex;
 			align-items: center;
 			column-gap: 15px;
+
+			@media (max-width: 860px) {
+				min-width: 330px;
+			}
+
+			@media (max-width: 770px) {
+				min-width: 280px;
+			}
+
+			@media (max-width: 630px) {
+				min-width: 280px;
+			}
 		}
 
 		&-two {
@@ -21,6 +39,21 @@
 			justify-content: space-between;
 			align-items: center;
 			margin-left: 70px;
+
+			@media (max-width: 630px) {
+				margin-left: 20px;
+			}
+
+			@media (max-width: 580px) {
+				margin-left: 0;
+				column-gap: 75px;
+				justify-content: center;
+			}
+
+			@media (max-width: 400px) {
+				column-gap: 0;
+				justify-content: space-between;
+			}
 		}
 	}
 

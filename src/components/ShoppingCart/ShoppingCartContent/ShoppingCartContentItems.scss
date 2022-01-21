@@ -13,6 +13,13 @@
 			letter-spacing: 0.01em;
 			color: $black;
 
+			@media (max-width: 450px) {
+				row-gap: 20px;
+				column-gap: 100px;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
 			&-count {
 				&-bold {
 					font-weight: bold;
