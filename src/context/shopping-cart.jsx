@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 import { localStorageSet, localStorageGet } from '../utils/localstorage.js'
 import {
@@ -144,6 +145,10 @@ const ShoppingCartProvider = ({ children }) => {
 			</ShoppingCartDispatchContext.Provider>
 		</ShoppingCartStateContext.Provider>
 	)
+}
+
+ShoppingCartProvider.propTypes = {
+	children: PropTypes.node
 }
 
 export {

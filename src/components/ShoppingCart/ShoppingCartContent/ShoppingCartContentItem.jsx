@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Button from '../../Button/Button'
 
@@ -89,6 +90,30 @@ const ShoppingCartContentItem = ({ apiItemData, itemData, doughs, sizes }) => {
 			</div>
 		</div>
 	)
+}
+
+ShoppingCartContentItem.propTypes = {
+	apiItemData: PropTypes.shape({
+		id: PropTypes.number,
+		popularity: PropTypes.number,
+		price: PropTypes.number,
+		imageUrl: PropTypes.string,
+		name: PropTypes.string,
+		categories: PropTypes.arrayOf(PropTypes.string),
+		dough: PropTypes.arrayOf(PropTypes.string),
+		sizes: PropTypes.arrayOf(PropTypes.string)
+	}),
+
+	itemData: PropTypes.shape({
+		count: PropTypes.number,
+		id: PropTypes.number,
+		price: PropTypes.number,
+		dough: PropTypes.string,
+		size: PropTypes.string
+	}),
+
+	doughs: PropTypes.object,
+	sizes: PropTypes.object
 }
 
 export default ShoppingCartContentItem

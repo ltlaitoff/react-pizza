@@ -62,7 +62,7 @@ SelectionFilter.propTypes = {
 }
 
 SelectionFilter.defaultProps = {
-	onChange: (categoryId, categoryName) => {}
+	onChange: () => {}
 }
 
 export default SelectionFilter

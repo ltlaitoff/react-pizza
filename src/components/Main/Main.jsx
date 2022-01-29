@@ -1,13 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import styles from './Main.scss'
 
-const Main = props => {
+const Main = ({children}) => {
 	return (
 		<main className='main' style={styles}>
-			{props.children}
+			{children}
 		</main>
 	)
+}
+
+Main.propTypes = {
+	children: PropTypes.node
 }
 
 export default Main

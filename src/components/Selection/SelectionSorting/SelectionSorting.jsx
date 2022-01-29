@@ -60,7 +60,7 @@ SelectionSorting.propTypes = {
 }
 
 SelectionSorting.defaultProps = {
-	onChange: (sortingId, sortingName) => {}
+	onChange: () => {}
 }
 
 export default SelectionSorting

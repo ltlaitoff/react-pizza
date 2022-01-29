@@ -124,7 +124,8 @@ Button.propTypes = {
 	textColor: PropTypes.string,
 	borderColor: PropTypes.string,
 	borderWidth: PropTypes.number,
-	borderRadius: PropTypes.string
+	borderRadius: PropTypes.string,
+	style: PropTypes.object
 }
 
 Button.defaultProps = {
