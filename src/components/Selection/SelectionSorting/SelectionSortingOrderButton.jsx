@@ -1,6 +1,5 @@
-/* eslint-disable */
-
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Button from '../../Button/Button.jsx'
 import { ReactComponent as ArrowUpIcon } from '../../../assets/images/favicon/arrow-up.svg'
@@ -30,6 +29,11 @@ const SelectionSortingOrderButton = ({ currentStatus, onClick }) => {
 			/>
 		</Button>
 	)
+}
+
+SelectionSortingOrderButton.propTypes = {
+	currentStatus: PropTypes.string,
+	onClick: PropTypes.func.isRequired
 }
 
 export default SelectionSortingOrderButton

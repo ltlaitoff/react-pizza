@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
@@ -64,7 +62,7 @@ SelectionFilter.propTypes = {
 }
 
 SelectionFilter.defaultProps = {
-	onChange: (categoryId, categoryName) => {}
+	onChange: () => {}
 }
 
 export default SelectionFilter

@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
@@ -62,7 +60,7 @@ SelectionSorting.propTypes = {
 }
 
 SelectionSorting.defaultProps = {
-	onChange: (sortingId, sortingName) => {}
+	onChange: () => {}
 }
 
 export default SelectionSorting
