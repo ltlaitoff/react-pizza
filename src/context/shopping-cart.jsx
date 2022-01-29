@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { createContext, useContext, useReducer, useEffect } from 'react'
 
 import { localStorageSet, localStorageGet } from '../utils/localstorage.js'
