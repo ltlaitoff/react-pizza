@@ -1,7 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Button from '../Button/Button'
-
 import styles from './ProductSizes.scss'
 
 const ProductSizes = ({ allSizes, productSizes, activeSize, onChange }) => {
@@ -34,6 +34,13 @@ const ProductSizes = ({ allSizes, productSizes, activeSize, onChange }) => {
 			})}
 		</div>
 	)
+}
+
+ProductSizes.propTypes = {
+	allSizes: PropTypes.object,
+	productSizes: PropTypes.array,
+	activeSize: PropTypes.string,
+	onChange: PropTypes.func
 }
 
 export default ProductSizes

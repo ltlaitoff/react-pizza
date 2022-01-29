@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Button from '../Button/Button'
 
@@ -34,6 +35,13 @@ const ProductDoughs = ({ allDoughs, productDoughs, activeDough, onChange }) => {
 			})}
 		</div>
 	)
+}
+
+ProductDoughs.propTypes = {
+	allDoughs: PropTypes.object,
+	productDoughs: PropTypes.array,
+	activeDough: PropTypes.string,
+	onChange: PropTypes.func
 }
 
 export default ProductDoughs

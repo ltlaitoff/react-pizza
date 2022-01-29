@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 import { getPizzas } from '../../api/api.js'
 
@@ -37,6 +38,21 @@ const ProductsItems = ({ filter, sorting, sizes, doughs }) => {
 			})}
 		</div>
 	)
+}
+
+ProductsItems.propTypes = {
+	filter: PropTypes.shape({
+		id: PropTypes.string,
+		name: PropTypes.string
+	}),
+
+	sorting: PropTypes.shape({
+		id: PropTypes.number,
+		name: PropTypes.string,
+		order: PropTypes.string
+	}),
+	sizes: PropTypes.object,
+	doughs: PropTypes.object
 }
 
 export default ProductsItems

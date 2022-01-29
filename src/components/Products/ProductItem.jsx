@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import ProductDoughs from './ProductDoughs.jsx'
 import ProductSizes from './ProductSizes.jsx'
@@ -90,6 +91,22 @@ const ProductItem = ({ product, doughs, sizes }) => {
 			</div>
 		</div>
 	)
+}
+
+ProductItem.propTypes = {
+	product: PropTypes.shape({
+		id: PropTypes.number,
+		name: PropTypes.string,
+		imageUrl: PropTypes.string,
+		dough: PropTypes.arrayOf(PropTypes.string),
+		sizes: PropTypes.arrayOf(PropTypes.string),
+		price: PropTypes.number,
+		categories: PropTypes.arrayOf(PropTypes.string),
+		popularity: PropTypes.number
+	}),
+
+	sizes: PropTypes.object,
+	doughs: PropTypes.object
 }
 
 export default ProductItem
